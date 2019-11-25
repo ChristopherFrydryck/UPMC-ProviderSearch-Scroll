@@ -1,0 +1,401 @@
+html{
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+    color: #af4591;
+    display: inline;
+}
+
+body{
+    max-width: 1800px;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+}
+
+#header{
+    display: flex;
+    overflow: auto;
+    height: 220px;
+    background-color: grey;
+    align-content: center;
+    justify-content: center;
+}
+#header section{
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center; 
+}
+
+#mainContent{
+    display: flex;
+    height: auto;
+    flex-direction: column;
+
+}
+
+#searchFilters{
+    display: flex;
+    flex-direction: column;
+    position: -webkit-sticky;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    height: auto;
+    min-height: 120px;
+    font-family: 'Gotham', sans-serif;
+    /* height: 120px; */
+    background-color: White;
+    margin-top: 10px;
+    z-index: 10;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+#searchFiltersHead{
+    font-size: 24px;
+    width: 40%;
+    color: #3A4042;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: 0.2s;
+    display: inline;
+}
+
+#searchFiltersHead a{
+    font-weight: 600;
+}
+
+#filter{
+    /* background-color: green; */
+    display: flex; 
+    flex-direction: row;
+}
+
+#filter .option{
+    text-align: center;
+    cursor: pointer;
+    color: gray;
+    padding: 12px 10px;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    margin-right: 16px;
+    transition: 0.2s
+}
+
+#filter .option.active{
+    border: 2px solid #27C4A5;
+}
+
+#filter .option p{
+    margin: 0;
+}
+
+.removed{
+    display: none;
+}
+
+#filter .container.active{
+    color: #27C4A5;
+}
+
+#filter .option:hover{
+    color: rgb(36, 97, 85);
+    border: 2px solid rgb(36, 97, 85);
+}
+
+#chips{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    height: 38px;
+}
+
+#chips .chip{
+    display: inline-flex;
+    align-self: baseline;
+    margin-right: 8px;
+    padding: 0px 4px 0 16px;
+    background-color: #F5F5F7;
+    color: #0E856D;
+    border-radius: 30px;
+    font-size: 12px;
+}
+
+
+.chip a{
+    color: #0E856D;
+}
+
+#row{
+    display: flex;
+    flex-direction: row;
+}
+
+#numResults{
+    font-family: 'Gotham', sans-serif;
+    font-size: 1em;
+    color: #b3b6b8;
+    padding-left: 10px;
+    font-weight: 300;
+}
+
+.ANC-Card{
+    display: flex;
+    flex-direction: row;
+    font-family: 'Gotham', sans-serif;
+    align-content: center;
+    box-shadow: 0 2px 3px 0 rgba(148,153,155,.7);
+    width: auto;
+    padding: 0px 10px;
+    margin: 10px 10px 10px 0px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+.ANC-Card span{
+    color: #af4591;
+    font-weight: 600;
+}
+
+
+#providerCards{
+    padding-left: 10px;
+    flex: 5;
+    flex-direction: column;
+}
+
+#providerCards a{
+    color: black;
+}
+
+.provider{
+    display: flex;
+    flex-direction: row;
+    font-family: 'Gotham', sans-serif;
+    box-shadow: 0 2px 3px 0 rgba(148,153,155,.7);
+    height: 140px !important;
+    width: auto;
+    margin: 10px 10px 10px 0px;
+    padding: 10px 10px 20px 10px;;
+    background-color: white;
+    border-radius: 2px;
+}
+
+/* Begin left half of card */
+
+.provider .leftColumn{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+    justify-content: flex-start;
+}
+
+.leftColumn .spacer{
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.provider h2{
+    color: #af4591;
+    font-size: 1.1em;
+    margin: 0;
+}
+
+.provider h3{
+    color: #383e41;
+    font-size: 1em;
+    margin: 10px 0 0 0;
+}
+
+.provider .fa{
+    justify-self: flex-end;
+    color: #35844d;
+}
+
+.provider .np{
+    color: #383e41;
+    font-family: 'Gothic', sans-serif;
+    font-size: .85em;
+    padding-left: 5px;
+}
+
+/* Begin right half of card */
+
+.provider .rightColumn{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.provider h4{
+    margin: 0;
+    font-size: .75em;
+}
+
+.provider address{
+    font-size: .85em;
+}
+
+.provider phone{
+    font-size: .85em;
+}
+
+
+.provider .milesDist{
+    font-size: .75em;
+    
+}
+
+.provider .letter{
+    color: white;
+    background-color: #af4591;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+
+
+
+#pagination{
+    background-color: white;
+    position: -webkit-sticky;
+    box-shadow: 0px -4px 5px #d1d3d4;
+    position: sticky;
+    bottom: -1;
+    margin-left: -10px;
+    padding: 15px 15px;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+}
+
+#pagination .nav{
+    display: flex;
+    color: #af4591;
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+}
+
+#pagination .nav:focus{
+    color: #861f62;
+}
+
+#pagination .nav i{
+    padding: 0 5px;
+}
+
+#pagination #nums .active{
+
+
+    
+    text-align: center;
+    vertical-align: middle;
+    background-color: #af4591;
+    border-radius: 50%;
+    color: white;
+    
+}
+
+#pagination #nums{
+    display: flex;
+    align-self: flex-end;
+    flex: 5;
+    margin-top: -17px;
+    flex-direction: row;
+    font-family: 'Gotham', sans-serif;
+    justify-content: space-around;
+    align-items: baseline;
+    max-width: 300px;
+}
+
+#pagination #nums h5{
+    
+    padding: 5px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+}
+
+#pagination #nums a{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: space-around;
+    color: inherit;
+    text-align: center;
+}
+
+.navNext{
+    justify-content: flex-end;
+}
+
+
+
+/* #pagination p{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center; 
+} */
+
+#pagination a{
+    height: 40px;
+    max-height: 40px;
+    padding: 10px;
+    width: auto;
+    text-decoration: none;
+    font-family: 'Gotham', sans-serif;
+}
+
+.disabled{
+    color: gray !important;
+    cursor: not-allowed;
+}
+
+#map{
+    display: flex;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 178;
+    flex: 7;
+    margin: 10px 0px;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    height: calc(100vh - 178px);
+}
+
+#googleMap{
+    flex: 1;
+}
+#footer{
+    display: flex;
+    overflow: auto;
+    height: 450px;
+    background-color: grey;
+    align-content: center;
+    justify-content: center;
+}
+
+#footer section{
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center; 
+}

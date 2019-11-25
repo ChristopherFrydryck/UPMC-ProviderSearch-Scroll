@@ -1,0 +1,152 @@
+<html>
+    <head>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="index.css">
+            <script type="text/javascript" language="javascript" src="ProviderData.json"></script>
+            
+    </head>
+    <body>
+        <div id="header">
+            <section>This is a header...</section>
+        </div>
+        
+        <div id="mainContent">
+                <div id="searchFilters">
+                        <h2 id="searchFiltersHead">I'm searching for an <a href="#">Optometrist</a> within <a href="#">5 miles</a> of <a href="#">Pittsburgh, PA</a>.</h2>
+                        <div id="filter">
+                            <a onClick="clickFilter(this)" class="option hospital" >
+                                 <div class="container">
+                                    <p>Affiliated Hospital</p>
+                                 </div>
+                            </a>
+                            <a onClick="clickFilter(this)" class="option time" >
+                                <div class="container">
+                                     <p>Open Time</p>
+                                </div>
+                            </a>
+                            <a onClick="clickFilter(this)" class="option patients active" >
+                                <div class="container active">
+                                    <p>Accepting New Patients</p>
+                                </div>
+                            </a>
+                            <a onClick="clickFilter(this)" class="option handicap" >
+                                <div class="container">
+                                    <p>Handicap Accessible</p>
+                                </div>
+                            </a>
+                            <a onClick="clickFilter(this)" class="option network" >
+                                <div class="container">
+                                    <p>Network Accepted</p>
+                                </div>
+                               
+                            </a>
+                        </div>
+                        <div id="chips">
+                            <div class="chip hospital">
+                                <p>Hospital Name</p>
+                                <a href="#" style="padding: 12px;"><i class="fa fa-close" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="chip time">
+                                <p>Open Evenings and Weekends</p>
+                                <a href="#" style="padding: 12px;"><i class="fa fa-close" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="chip patients">
+                                    <p>Accepting New Patients</p>
+                                    <a href="#" style="padding: 12px;"><i class="fa fa-close" aria-hidden="true"></i></a>
+                               </div>
+                            <div class="chip handicap">
+                                 <p>Handicap Accessible</p>
+                                 <a href="#" style="padding: 12px;"><i class="fa fa-close" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="chip network">
+                                <p>Network Accepted</p>
+                                <a href="#" style="padding: 12px;"><i class="fa fa-close" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="chip gender">
+                                <p>Female Doctor</p>
+                                <a href="#" style="padding: 12px;"><i class="fa fa-close" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                </div>  
+            <div id="row">  
+            <div id="providerCards">
+                <h4 id="numResults">100 Results</h4>
+                <a href="https://myupmc.upmc.com/anywhere-care/" target="_blank">
+                    <div class="ANC-Card">
+                        <p>I'm looking for virtual care via <span>UPMC AnywhereCare</span>.</p>
+                    </div>
+                </a>
+                <script>
+                    for(i = 0; i < 20; i++){
+                       document.getElementById("providerCards").innerHTML += '<a href="#"><div class="provider"><div class="leftColumn"><h2 class="name">Lastname, Firstname MI, MD</h2><div class="spacer"><h3>Internal Medicine</h3><i class="fa fa-check" aria-hidden="true"><span class="np">Accepting new patients</span></i></div></div><div class="rightColumn"><h4>Pine Richland Medical Associates</h4><div><address>9999 Poplar Street <br>Pittsburgh, PA 15222</address><phone>(412) 412-4124</phone></div><div class="milesDist"><span class="letter">B</span><span class="distance"> 0.75 miles away</span></div></div></div></a>'
+                    }
+                </script>
+                <!-- Replaces this: -->
+                <!-- <a href="#">
+                    <div class="provider">
+                            <div class="leftColumn">
+                                <h2 class="name">Lastname, Firstname MI, MD</h2>
+                                <div class="spacer">
+                                    <h3>Internal Medicine</h3>
+                                    <i class="fa fa-check" aria-hidden="true"><span class="np">Accepting new patients</span></i>
+                                </div>
+                            </div>
+                            <div class="rightColumn">
+                                <h4>Pine Richland Medical Associates</h4>
+                                <div>
+                                    <address>9999 Poplar Street <br>Pittsburgh, PA 15222</address>
+                                    <phone>(412) 412-4124</phone>
+                                </div>
+                                
+                                <div class="milesDist"><span class="letter">B</span><span class="distance"> 0.75 miles away</span></div>
+                            </div>
+                    </div>
+                </a> -->
+                <div id="pagination">
+                   <a onClick="clickFunction(this)" href="#searchFilters" class="nav navPrev disabled">
+                        <i class="fa fa-chevron-left"></i>   
+                        <span>Prev</span>
+                    </a>
+                   <div id="nums">
+                       <a onClick="clickFunction(this)" href="#searchFilters"><h5 class="navLink active">1</h5></a>
+                       <a onClick="clickFunction(this)"  href="#searchFilters"><h5 class="navLink">2</h5></a>
+                       <a onClick="clickFunction(this)"  href="#searchFilters"><h5 class="navLink">3</h5></a>
+                       <a onClick="clickFunction(this)"  href="#searchFilters"><h5 class="navLink">4</h5></a>
+                       <a onClick="clickFunction(this)" href="#searchFilters"><h5 class="navLink">5</h5></a>
+                   </div>
+                   <a onClick="clickFunction(this)" href="#searchFilters" class="nav navNext">
+                        <span>Next</span>
+                        <i class="fa fa-chevron-right"></i>    
+                    </a>
+                </div>
+            </div>
+            <div id="map">
+                <div id="googleMap"></div>
+            </div>
+            
+            </div>   
+        </div>
+        <div id="footer">
+                <section>This is a footer...</section>
+        </div>
+        
+    </body>
+    <script type="text/javascript" language="javascript" src="index.js"></script>
+</html>
+
+<script>
+    document.querySelector('a').scrollIntoView({ 
+        behavior: 'smooth' 
+    });
+   
+
+    function myMap() {
+        var mapProp= {
+            center:new google.maps.LatLng(40.4406,-79.9959),
+            zoom: 12,
+        };
+        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    }
+</script>
+        
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ4cSOr6SH0sZ4R4r0cPuI9DNaQ3m7Zqo&callback=myMap"></script>
