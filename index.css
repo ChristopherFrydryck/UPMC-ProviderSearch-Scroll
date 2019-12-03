@@ -8,6 +8,10 @@ a{
     display: inline;
 }
 
+.hidden{
+    display: none !important;
+}
+
 body{
     max-width: 1800px;
     margin: 0 auto;
@@ -39,6 +43,7 @@ body{
 
 #searchFilters{
     display: flex;
+    white-space: nowrap;
     flex-direction: column;
     position: -webkit-sticky;
     padding: 10px 20px;
@@ -49,6 +54,7 @@ body{
     font-family: 'Gotham', sans-serif;
     /* height: 120px; */
     background-color: White;
+    box-shadow: 0px 4px 5px #d1d3d4;
     margin-top: 10px;
     z-index: 10;
     align-items: flex-start;
@@ -56,8 +62,10 @@ body{
 }
 
 #searchFiltersHead{
-    font-size: 24px;
-    width: 40%;
+    font-size: 28px;
+    line-height: 135%;
+    width: 40vw;
+    white-space: normal;
     color: #3A4042;
     font-weight: 300;
     display: flex;
@@ -79,6 +87,8 @@ body{
 
 #filter .option{
     text-align: center;
+    align-items: center;
+    display: flex;
     cursor: pointer;
     color: gray;
     padding: 12px 10px;
@@ -110,10 +120,19 @@ body{
 }
 
 #chips{
+    overflow-x: scroll;
+    width: 100%;
+    white-space: nowrap;
     display: flex;
     flex-direction: row;
     margin-top: 10px;
-    height: 38px;
+    height: auto;
+    
+}
+
+#chips::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
 }
 
 #chips .chip{
@@ -121,10 +140,11 @@ body{
     align-self: baseline;
     margin-right: 8px;
     padding: 0px 4px 0 16px;
-    background-color: #F5F5F7;
+    background-color: rgb(241, 241, 241);
     color: #0E856D;
     border-radius: 30px;
-    font-size: 12px;
+    font-size: 14px;
+    transition: 0.2s;
 }
 
 
@@ -272,9 +292,10 @@ body{
     position: -webkit-sticky;
     box-shadow: 0px -4px 5px #d1d3d4;
     position: sticky;
+    height: 60px;
     bottom: -1;
     margin-left: -10px;
-    padding: 15px 15px;
+    padding: 5px 15px;
     display: flex;
     flex-direction: row;
     align-content: space-between;
@@ -310,9 +331,7 @@ body{
 
 #pagination #nums{
     display: flex;
-    align-self: flex-end;
     flex: 5;
-    margin-top: -17px;
     flex-direction: row;
     font-family: 'Gotham', sans-serif;
     justify-content: space-around;
@@ -370,14 +389,14 @@ body{
     display: flex;
     position: -webkit-sticky;
     position: sticky;
-    top: 178;
+    top: 188;
     flex: 7;
     margin: 10px 0px;
     color: white;
     text-align: center;
     justify-content: center;
     flex-direction: column;
-    height: calc(100vh - 178px);
+    height: calc(100vh - 188px);
 }
 
 #googleMap{

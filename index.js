@@ -19,6 +19,9 @@ function dataRandomize() {
     Array.from(document.querySelectorAll('phone')).forEach((v, i)  => {
         v.innerHTML = myJson[i].phone;
     })
+    Array.from(document.querySelectorAll('.letter')).forEach((v, i) => {
+        v.innerHTML = String.fromCharCode(97 + i).toUpperCase();
+    })
     Array.from(document.querySelectorAll('.rightColumn h4')).forEach((v, i)  => {
         v.innerHTML = myJson[i].practice;
     })
@@ -28,9 +31,21 @@ function dataRandomize() {
 // Shrinks search header at scroll position 100
 function scrollFunction() {
     if (window.scrollY < 100) {
-        document.getElementById('searchFiltersHead').style.cssText = "font-size: 24px;";
+        document.getElementById('searchFiltersHead').style.cssText = "font-size: 28px; white-space: normal";
+        document.querySelectorAll('#filter .option').forEach(e => {
+            e.style.cssText = "font-size: 14px"
+        })
+        document.querySelectorAll('#chips .chip').forEach(e => {
+            e.style.cssText = "font-size: 14px"
+        })
     } else if(window.scrollY > 100) {
-        document.getElementById('searchFiltersHead').style.cssText = "font-size: 18px;";
+        document.getElementById('searchFiltersHead').style.cssText = "font-size: 18px; white-space: nowrap";
+        document.querySelectorAll('#filter .option').forEach(e => {
+            e.style.cssText = "font-size: 12px"
+        })
+        document.querySelectorAll('#chips .chip').forEach(e => {
+            e.style.cssText = "font-size: 12px"
+        })
     }
 } window.onscroll = function() {scrollFunction()};
 

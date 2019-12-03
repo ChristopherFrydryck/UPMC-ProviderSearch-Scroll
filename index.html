@@ -42,11 +42,11 @@
                             </a>
                         </div>
                         <div id="chips">
-                            <div class="chip hospital">
+                            <div class="chip hospital hidden">
                                 <p>Hospital Name</p>
                                 <a href="#" style="padding: 12px;"><i class="fa fa-close" aria-hidden="true"></i></a>
                             </div>
-                            <div class="chip time">
+                            <div class="chip time hidden">
                                 <p>Open Evenings and Weekends</p>
                                 <a href="#" style="padding: 12px;"><i class="fa fa-close" aria-hidden="true"></i></a>
                             </div>
@@ -54,15 +54,15 @@
                                     <p>Accepting New Patients</p>
                                     <a href="#" style="padding: 12px;"><i class="fa fa-close" aria-hidden="true"></i></a>
                                </div>
-                            <div class="chip handicap">
+                            <div class="chip handicap hidden">
                                  <p>Handicap Accessible</p>
                                  <a href="#" style="padding: 12px;"><i class="fa fa-close" aria-hidden="true"></i></a>
                             </div>
-                            <div class="chip network">
+                            <div class="chip network hidden">
                                 <p>Network Accepted</p>
                                 <a href="#" style="padding: 12px;"><i class="fa fa-close" aria-hidden="true"></i></a>
                             </div>
-                            <div class="chip gender">
+                            <div class="chip gender hidden">
                                 <p>Female Doctor</p>
                                 <a href="#" style="padding: 12px;"><i class="fa fa-close" aria-hidden="true"></i></a>
                             </div>
@@ -144,6 +144,9 @@
         var mapProp= {
             center:new google.maps.LatLng(40.4406,-79.9959),
             zoom: 12,
+            options: {
+                // gestureHandling: 'greedy'
+            }
         };
         var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
     }
