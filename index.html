@@ -1,5 +1,6 @@
 <html>
     <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <link rel="stylesheet" href="index.css">
             <script type="text/javascript" language="javascript" src="ProviderData.json"></script>
@@ -12,7 +13,11 @@
         
         <div id="mainContent">
                 <div id="searchFilters">
-                        <h2 id="searchFiltersHead">I'm searching for an <a href="#">Optometrist</a> within <a href="#">5 miles</a> of <a href="#">Pittsburgh, PA</a>.</h2>
+                        <div id="searchFiltersHead">
+                                <a id="editSearch" href="">Edit Search</a>
+                            <h2 id="searchHead">I'm searching for an <a href="#">Optometrist</a> within <a href="#">5 miles</a> of <a href="#">Pittsburgh, PA</a>.</h2>
+                            
+                        </div>
                         <div id="filter">
                             <a onClick="clickFilter(this)" class="option hospital" >
                                  <div class="container">
@@ -39,6 +44,12 @@
                                     <p>Network Accepted</p>
                                 </div>
                                
+                            </a>
+                            <a onClick="clickFilter(this)" class="option more" >
+                                    <div class="container">
+                                        <p>More</p>
+                                    </div>
+                                   
                             </a>
                         </div>
                         <div id="chips">
@@ -67,9 +78,10 @@
                                 <a href="#" style="padding: 12px;"><i class="fa fa-close" aria-hidden="true"></i></a>
                             </div>
                         </div>
-                </div>  
-            <div id="row">  
-            <div id="providerCards">
+                </div>
+            <div id="row">   
+            <div id="leftColumn">
+                <span id="results">
                 <h4 id="numResults">100 Results</h4>
                 <a href="https://myupmc.upmc.com/anywhere-care/" target="_blank">
                     <div class="ANC-Card">
@@ -78,7 +90,7 @@
                 </a>
                 <script>
                     for(i = 0; i < 20; i++){
-                       document.getElementById("providerCards").innerHTML += '<a href="#"><div class="provider"><div class="leftColumn"><h2 class="name">Lastname, Firstname MI, MD</h2><div class="spacer"><h3>Internal Medicine</h3><i class="fa fa-check" aria-hidden="true"><span class="np">Accepting new patients</span></i></div></div><div class="rightColumn"><h4>Pine Richland Medical Associates</h4><div><address>9999 Poplar Street <br>Pittsburgh, PA 15222</address><phone>(412) 412-4124</phone></div><div class="milesDist"><span class="letter">B</span><span class="distance"> 0.75 miles away</span></div></div></div></a>'
+                       document.getElementById("results").innerHTML += '<a href="#"><div class="provider"><div class="leftColumn"><h2 class="name">Lastname, Firstname MI, MD</h2><div class="spacer"><h3>Internal Medicine</h3><i class="fa fa-check" aria-hidden="true"><span class="np">Accepting new patients</span></i></div></div><div class="rightColumn"><h4>Pine Richland Medical Associates</h4><div><address>9999 Poplar Street <br>Pittsburgh, PA 15222</address><phone>(412) 412-4124</phone></div><div class="milesDist"><span class="letter">B</span><span class="distance"> 0.75 miles away</span></div></div></div></a>'
                     }
                 </script>
                 <!-- Replaces this: -->
@@ -102,6 +114,7 @@
                             </div>
                     </div>
                 </a> -->
+                </span>
                 <div id="pagination">
                    <a onClick="clickFunction(this)" href="#searchFilters" class="nav navPrev disabled">
                         <i class="fa fa-chevron-left"></i>   
@@ -118,13 +131,20 @@
                         <span>Next</span>
                         <i class="fa fa-chevron-right"></i>    
                     </a>
+                    <a href="#searchFilters" class="mapListToggle">
+                            <i class="fa fa-lg fa-map" aria-hidden="true"></i>
+                    </a> 
+                   
                 </div>
             </div>
             <div id="map">
                 <div id="googleMap"></div>
-            </div>
-            
-            </div>   
+                <a href="#searchFilters" class="mapListToggle">
+                    <i class="fa fa-lg fa-list-ul" aria-hidden="true"></i>
+                </a>
+          
+            </div>            
+        </div>   
         </div>
         <div id="footer">
                 <section>This is a footer...</section>
@@ -144,6 +164,7 @@
         var mapProp= {
             center:new google.maps.LatLng(40.4406,-79.9959),
             zoom: 12,
+            zoomControl: false,
             options: {
                 // gestureHandling: 'greedy'
             }
