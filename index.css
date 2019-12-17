@@ -497,9 +497,29 @@ body{
         display: none;
     }
 
+    #searchHead{
+        width: 75vw;
+        font-size: 18px; 
+        white-space: normal; 
+        width: auto;
+    }
+
+    #searchFiltersHead{
+        flex-direction: row-reverse; 
+        justify-content: flex-end; 
+        align-items: baseline; 
+        padding-top: 0;
+    }
+
+    #searchFiltersHead #editSearch{
+        margin-right: 10px;
+        margin-left: 18px;
+    }
+
     #searchFilters{
         padding: 10px 0px 10px 10px;
     }
+    
 
     #searchFiltersHead #editSearch{
         margin-right: 10px;
@@ -523,6 +543,10 @@ body{
         margin: 10px 5px
     }
 
+    #filter .option{
+        font-size: 12px;
+    }
+
     #filter .option.hospital{
         display: none;
     }
@@ -531,6 +555,10 @@ body{
     }
     #filter .option.handicap{
         display: none;
+    }
+
+    #chips .chip{
+        font-size: 12px;
     }
 
   }
@@ -551,10 +579,21 @@ body{
 
     #searchHead{
         width: 75vw;
+        font-size: 18px; 
+        white-space: normal; 
+        width: auto;
+    }
+
+    #searchFiltersHead{
+        flex-direction: row-reverse; 
+        justify-content: flex-end; 
+        align-items: baseline; 
+        padding-top: 0;
     }
 
     #searchFiltersHead #editSearch{
         margin-right: 10px;
+        margin-left: 18px;
     }
 
     .mapListToggle{display: flex;}
@@ -577,6 +616,10 @@ body{
         width: calc(100% - 10px);
     }
 
+    #filter .option{
+        font-size: 12px;
+    }
+
     #filter .option.hospital{
         display: none;
     }
@@ -585,6 +628,10 @@ body{
     }
     #filter .option.handicap{
         display: none;
+    }
+
+    #chips .chip{
+        font-size: 12px;
     }
 
     #pagination{
