@@ -78,7 +78,7 @@ function reportWindowSize(){
 
 // Shrinks search header at scroll position 100
 function scrollFunction() {
-    if (window.scrollY < 100) {
+    if (window.scrollY < 100 && window.innerWidth > 768) {
         document.getElementById('searchHead').style.cssText = "font-size: 28px; white-space: normal; padding-top: 10;";
         document.getElementById('searchFiltersHead').style.cssText = "flex-direction: column;";
         document.getElementById('editSearch').style.cssText = "margin-left: 0;";
@@ -88,7 +88,7 @@ function scrollFunction() {
         document.querySelectorAll('#chips .chip').forEach(e => {
             e.style.cssText = "font-size: 14px"
         })
-    } else if(window.scrollY > 100) {
+    } else if(window.scrollY > 100 && window.innerWidth > 768) {
         document.getElementById('searchHead').style.cssText = "font-size: 18px; white-space: normal; width: auto;";
         document.getElementById('searchFiltersHead').style.cssText = "flex-direction: row-reverse; justify-content: flex-end; align-items: baseline; padding-top: 0;";
         document.getElementById('editSearch').style.cssText = "margin-left: 18px;";
