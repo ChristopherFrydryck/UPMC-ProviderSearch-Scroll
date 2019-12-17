@@ -28,10 +28,60 @@ function dataRandomize() {
 } dataRandomize();
 
 
+
+// For floating button logic to toggle map and list view
+var showingMap = false;
+document.addEventListener('DOMContentLoaded', function () {
+    var mapToggles = document.getElementsByClassName("mapListToggle");
+    for( let i = 0; i < mapToggles.length; i++){
+        mapToggles[i].addEventListener("click", mobileToggle);
+    }
+});
+
+function mobileToggle(){
+    let results = document.getElementById('leftColumn');
+    let map = document.getElementById('map');
+    let container = document.getElementById('row');
+    
+
+    if(showingMap){
+        map.style.cssText = "display: none;"
+        results.style.cssText = 'display: inherit;'
+        container.style.cssText = 'flex-direction: column;'
+        showingMap = false;
+    }else{
+        results.style.cssText = "display: none;"
+        map.style.cssText = "display: inherit;"
+        container.style.cssText = 'flex-direction: column-reverse;'
+        showingMap = true;
+    }
+     
+}
+
+
+// Reset inline styles greater than tablet
+window.addEventListener('resize', reportWindowSize);
+function reportWindowSize(){
+    if(window.innerWidth > 768){
+        document.getElementById('leftColumn').removeAttribute('style');
+        document.getElementById('map').removeAttribute('style');
+        document.getElementById('row').removeAttribute('style');
+    }
+}
+
+
+
+
+
+
+
+
 // Shrinks search header at scroll position 100
 function scrollFunction() {
     if (window.scrollY < 100) {
-        document.getElementById('searchFiltersHead').style.cssText = "font-size: 28px; white-space: normal";
+        document.getElementById('searchHead').style.cssText = "font-size: 28px; white-space: normal; padding-top: 10;";
+        document.getElementById('searchFiltersHead').style.cssText = "flex-direction: column;";
+        document.getElementById('editSearch').style.cssText = "margin-left: 0;";
         document.querySelectorAll('#filter .option').forEach(e => {
             e.style.cssText = "font-size: 14px"
         })
@@ -39,7 +89,9 @@ function scrollFunction() {
             e.style.cssText = "font-size: 14px"
         })
     } else if(window.scrollY > 100) {
-        document.getElementById('searchFiltersHead').style.cssText = "font-size: 18px; white-space: nowrap";
+        document.getElementById('searchHead').style.cssText = "font-size: 18px; white-space: normal; width: auto;";
+        document.getElementById('searchFiltersHead').style.cssText = "flex-direction: row-reverse; justify-content: flex-end; align-items: baseline; padding-top: 0;";
+        document.getElementById('editSearch').style.cssText = "margin-left: 18px;";
         document.querySelectorAll('#filter .option').forEach(e => {
             e.style.cssText = "font-size: 12px"
         })

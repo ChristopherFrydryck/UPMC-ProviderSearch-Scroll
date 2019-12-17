@@ -12,6 +12,10 @@ a{
     display: none !important;
 }
 
+.hideMobile{
+    display: inline;
+}
+
 body{
     max-width: 1800px;
     margin: 0 auto;
@@ -54,7 +58,7 @@ body{
     font-family: 'Gotham', sans-serif;
     /* height: 120px; */
     background-color: White;
-    box-shadow: 0px 4px 5px #d1d3d4;
+    box-shadow: 0px 4px 10px 4px #0000001e;
     margin-top: 10px;
     z-index: 10;
     align-items: flex-start;
@@ -62,17 +66,41 @@ body{
 }
 
 #searchFiltersHead{
-    font-size: 28px;
-    line-height: 135%;
-    width: 40vw;
-    white-space: normal;
-    color: #3A4042;
+    width: 100%;
+    padding-top: 10px;
     font-weight: 300;
     display: flex;
     flex-direction: column;
+ 
+    
+    
+}
+
+#searchHead{
+    font-size: 28px;
+    line-height: 135%;
+    width: 55vw;
+    white-space: normal;
+    color: #3A4042;
+    font-weight: 300;
     text-align: left;
     transition: 0.2s;
     display: inline;
+}
+
+#searchFiltersHead #editSearch{
+    display: flex;
+    font-weight: 500 !important;
+    font-size: 14px;
+    align-items: center;
+    color: #9f367e;
+    border-radius: 50px;
+    margin: 0;
+    padding: 0px 10px;
+    height: 25px;
+    background-color: #f5e6f0;
+    width: fit-content;
+
 }
 
 #searchFiltersHead a{
@@ -82,6 +110,9 @@ body{
 #filter{
     /* background-color: green; */
     display: flex; 
+    overflow-x: scroll;
+    width: 100%;
+    white-space: nowrap;
     flex-direction: row;
 }
 
@@ -104,6 +135,19 @@ body{
 
 #filter .option p{
     margin: 0;
+}
+
+#filter .option.more{
+    background-color: #27C4A5;
+    color: white;
+    border: 2px solid #27C4A5;
+    padding: 12px 30px;
+    margin-right: 10px;
+}
+
+#filter .more:hover{
+    border: 2px solid rgb(36, 97, 85);
+    color: white !important;
 }
 
 .removed{
@@ -152,6 +196,27 @@ body{
     color: #0E856D;
 }
 
+
+.mapListToggle{
+    display: none;
+    width: 30px !important;
+    height: 30px !important;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+    background-color: #af4591;
+    position: absolute;
+    bottom: 80px;
+    right: 30;
+    font-size: 24px;
+    border-radius: 50%;
+    padding: 20px !important;
+    color: white !important;
+    box-shadow: rgb(0,0,0,0.21) 0px 2px 18px 3px;
+}
+
+
 #row{
     display: flex;
     flex-direction: row;
@@ -184,13 +249,14 @@ body{
 }
 
 
-#providerCards{
+#leftColumn{
     padding-left: 10px;
     flex: 5;
-    flex-direction: column;
+    flex-direction: column ;
+    display: flex 
 }
 
-#providerCards a{
+#leftColumn a{
     color: black;
 }
 
@@ -290,7 +356,7 @@ body{
 #pagination{
     background-color: white;
     position: -webkit-sticky;
-    box-shadow: 0px -4px 5px #d1d3d4;
+    box-shadow: 0px -4px 10px 4px #0000001e;
     position: sticky;
     height: 60px;
     bottom: -1;
@@ -402,6 +468,11 @@ body{
 #googleMap{
     flex: 1;
 }
+
+#pagination{
+    width: auto;
+}
+
 #footer{
     display: flex;
     overflow: auto;
@@ -418,3 +489,120 @@ body{
     flex-direction: column;
     text-align: center; 
 }
+
+@media only screen and (max-width: 769px) and (min-width: 481px) {
+
+
+    #map{
+        display: none;
+    }
+
+    #searchFilters{
+        padding: 10px 0px 10px 10px;
+    }
+
+    #searchFiltersHead #editSearch{
+        margin-right: 10px;
+    }
+
+    .mapListToggle{display: flex;}
+
+    #pagination{
+        width: auto;
+    }
+
+    #leftColumn{
+        padding-left: 0;
+    }
+
+    .provider{
+        margin: 10px 5px;
+    }
+
+    .ANC-Card{
+        margin: 10px 5px
+    }
+
+    #filter .option.hospital{
+        display: none;
+    }
+    #filter .option.time{
+        display: none;
+    }
+    #filter .option.handicap{
+        display: none;
+    }
+
+  }
+
+  @media only screen and (max-width: 480px) {
+    html{
+        width: 100vw;
+    }
+
+
+    #map{
+        display: none;
+    }
+
+    #searchFilters{
+        padding: 10px 0px 10px 10px;
+    }
+
+    #searchHead{
+        width: 75vw;
+    }
+
+    #searchFiltersHead #editSearch{
+        margin-right: 10px;
+    }
+
+    .mapListToggle{display: flex;}
+
+
+
+    #leftColumn{
+        padding-left: 0;
+    }
+
+    .provider{
+        margin: 10px 5px;
+    }
+
+    .ANC-Card{
+        margin: 10px 5px
+    }
+
+    #filter{
+        width: calc(100% - 10px);
+    }
+
+    #filter .option.hospital{
+        display: none;
+    }
+    #filter .option.time{
+        display: none;
+    }
+    #filter .option.handicap{
+        display: none;
+    }
+
+    #pagination{
+        padding: 0 5px;
+        margin-left: 0;
+        bottom: 0;
+    }
+
+    .nav{
+        padding: 10px 0;
+    }
+
+    .nav span{
+        display: none;
+    }
+
+    #nums a{
+        flex: 1;
+        padding: 10px 0px;
+    }
+  }
