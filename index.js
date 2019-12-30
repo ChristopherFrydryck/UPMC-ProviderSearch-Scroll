@@ -1,31 +1,84 @@
+// activeFilters
+var activeFilters = [];
+var limitedArray = [];
+var limitedFullArray = [];
+var filteredArray = []
+var startResults = 0;
+var endResults = 20;
+
 // Initally shuffle json data for cards
-shuffle(myJson);
+// shuffle(myJson);
 
 
-function dataRandomize() {
-    Array.from(document.getElementsByClassName('distance')).forEach((v, i)  => {
-        if(myJson[i].distance == '1'){
-            v.innerHTML = myJson[i].distance + " mile away";
-        }else{
-            v.innerHTML = myJson[i].distance + " miles away";
-        }
-    })
-    Array.from(document.getElementsByClassName('name')).forEach((v, i)  => {
-        v.innerHTML = myJson[i].name + ", MD"
-    })
-    Array.from(document.querySelectorAll('address')).forEach((v, i)  => {
-        v.innerHTML = myJson[i].address;
-    })
-    Array.from(document.querySelectorAll('phone')).forEach((v, i)  => {
-        v.innerHTML = myJson[i].phone;
-    })
-    Array.from(document.querySelectorAll('.letter')).forEach((v, i) => {
-        v.innerHTML = String.fromCharCode(97 + i).toUpperCase();
-    })
-    Array.from(document.querySelectorAll('.rightColumn h4')).forEach((v, i)  => {
-        v.innerHTML = myJson[i].practice;
-    })
-} dataRandomize();
+
+
+
+
+
+// Fake loading function. T is the time in milliseconds
+function fakeLoading(t){
+    document.getElementById("loaderDiv").scrollIntoView();
+    document.getElementById("loaderDiv").style.cssText = "display: flex"
+    document.getElementById("results").style.cssText = "display: none"
+    setTimeout(() => {
+        document.getElementById("results").style.cssText = "display: block";
+        document.getElementById("loaderDiv").style.cssText = "display: none";
+    }, t);
+} fakeLoading(4000); // Load for 4s by default
+
+
+
+
+
+function dataInitalize(start ,end, ANPfilt) {
+    document.getElementById("results").innerHTML = ""
+    // Initalize first 20 results but not the data
+    
+    if(arguments.length == 2){
+        limitedFullArray = myJson
+        limitedArray = myJson.filter((x, i) => i >= start && i < end)
+    }else{
+        limitedFullArray = myJson.filter((x, i) => x.acceptingNewPatients == true);
+        limitedArray = myJson.filter((x, i) => x.acceptingNewPatients == true).filter((x, i) => i >= start && i < end)
+    }
+
+
+    document.getElementById("results").innerHTML = '<h4 id="numResults">' + limitedFullArray.length + ' Results</h4>'
+    for(let i = 0; i < limitedArray.length; i++){
+        document.getElementById("results").innerHTML += '<a href="#"><div class="provider"><div class="leftColumn"><h2 class="name">Lastname, Firstname MI, MD</h2><div class="spacer"><h3>Internal Medicine</h3><span class="np"></span></div></div><div class="rightColumn"><h4>Pine Richland Medical Associates</h4><div><address>9999 Poplar Street <br>Pittsburgh, PA 15222</address><phone>(412) 412-4124</phone></div><div class="milesDist"><span class="letter">B</span><span class="distance"> 0.75 miles away</span></div></div></div></a>'
+    }
+
+    let dist = document.getElementsByClassName('distance');
+    let na = document.getElementsByClassName('name');
+    let add = document.querySelectorAll('address');
+    let pho = document.querySelectorAll('phone');
+    let np = document.querySelectorAll('.np');
+    let prac = document.querySelectorAll('.rightColumn h4');
+    let lett = document.querySelectorAll('.letter');
+
+        
+        limitedArray.forEach((v, i) => {
+            na[i].innerHTML = limitedArray[i].name + ", MD"; // Render name
+            add[i].innerHTML = limitedArray[i].address; // Render address
+            pho[i].innerHTML = limitedArray[i].phone; // Render phone number
+            prac[i].innerHTML = limitedArray[i].practice; // Render practice name
+            lett[i].innerHTML = String.fromCharCode(97 + i).toUpperCase();
+
+            // Render accepting new patients
+            if(limitedArray[i].acceptingNewPatients == true){
+                np[i].innerHTML = '<i class="fa fa-check" aria-hidden="true"><span class="np">Accepting new patients</span></i>'
+            }
+
+
+            // Render distances
+            if(limitedArray[i].distance == 1){
+                dist[i].innerHTML = limitedArray[i].distance + " mile away";
+            }else{
+                dist[i].innerHTML = limitedArray[i].distance + " miles away";
+            }
+        })
+} dataInitalize(startResults, endResults);
+
 
 
 
@@ -37,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
         mapToggles[i].addEventListener("click", mobileToggle);
     }
 });
+
 
 function mobileToggle(){
     let results = document.getElementById('leftColumn');
@@ -71,6 +125,11 @@ function reportWindowSize(){
 
 
 
+// Alert when clicking edit search
+document.getElementById('editSearch').addEventListener('click', () => alert("You successfully edited the search. You may continue with the test."));
+
+
+
 
 
 
@@ -102,46 +161,132 @@ function scrollFunction() {
 } window.onscroll = function() {scrollFunction()};
 
 
-// Activates and hides filter settings
-function clickFilter(e){
-    console.log(e.classList.contains('active'))
-    e.querySelector('.container').classList.toggle('active')
-    e.classList.toggle('active');
-    // if (e.classList.contains('option') && e.classList.contains('time')){
-    //     // alert("clicked time!")
-    //     e.querySelector('.container').classList.toggle('active')
-    //     e.classList.toggle('active');
-        
-    // }else if (e.classList.contains('option') && e.classList.contains('hospital')){
-    //     // alert("clicked hospital!")
-    // }else if (e.classList.contains('option') && e.classList.contains('patients')){
-    //     // alert("clicked patients!")
-    // }else if (e.classList.contains('option') && e.classList.contains('handicap')){
-    //     // alert("clicked handicap!")
-    // }else if (e.classList.contains('option') && e.classList.contains('network')){
-    //     // alert("clicked network!")
-    // }
+// For Clear All filter chip
+function clearAllFilters(){
+    activeFilters = [];
+    dataInitalize(0, 20)
+    managePaginationLength();
+    document.querySelectorAll('#filter .option').forEach((e) => {
+        e.classList.remove("active")
+    })
+
+    document.querySelectorAll('#filter .option .container').forEach((e) => {
+        e.classList.remove("active")
+    })
+
+    document.getElementById("chips").innerHTML = ''
+
+    fakeLoading(800);
+
+
 }
 
-// Shuffle function to randomize the order
-function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
 
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
+// For clicking on  the 'X' of the chip. E is the "X" that is clicked
+// and e.parentNode is the entire chip
+function closeChip(e){
+    // console.log(e.parentNode)
+    // console.log(e)
 
-        // Pick a remaining element...
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
+    e.parentNode.classList.add('hidden')
 
-        // And swap it with the current element.
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
+    document.querySelector("#filter .option."+e.parentNode.innerText.split(" ").toString()).classList.remove("active")
+    document.querySelector("#filter .option." + e.parentNode.innerText.split(" ")[0].toString() + " .container").classList.remove("active");
+
+    fakeLoading(800);
+
+    let splicePoint = activeFilters.findIndex((x) => x == e.parentNode.innerText);
+    activeFilters.splice(splicePoint, 1);
+
+    if(activeFilters.includes("Accepting New Patients")){
+        dataInitalize(0, 20, true)
+        managePaginationLength();
+    }else{
+        dataInitalize(0, 20)
+        managePaginationLength();
     }
 
-    return array;
+
+
+    if(activeFilters.length == 0){
+        document.getElementById('map').style.cssText = 'top: 150px;  height: calc(100vh - 150px);'
+        document.getElementById("chips").innerHTML = ''
+    }else{
+        document.getElementById('map').style.cssText = 'top: 180px;  height: calc(100vh - 180px);'
+    }
+
 }
+
+
+
+
+// Activates and hides filter settings
+function clickFilter(e){
+    // console.log(e.classList.contains('active'))
+    e.querySelector('.container').classList.toggle('active')
+    e.classList.toggle('active');
+    fakeLoading(800);
+    
+    if(!activeFilters.includes(e.querySelector('.container p').innerText)){
+        activeFilters.push(e.querySelector('.container p').innerText);
+    }else{
+        let splicePoint = activeFilters.findIndex((x) => x == e.querySelector('.container p').innerText)
+        activeFilters.splice(splicePoint, 1);
+    }
+
+    if(activeFilters.length == 0){
+        document.getElementById('map').style.cssText = 'top: 150px;  height: calc(100vh - 150px);'
+    }else{
+        document.getElementById('map').style.cssText = 'top: 180px;  height: calc(100vh - 180px);'
+    }
+
+
+    // Check for ANP
+    if(activeFilters.includes("Accepting New Patients")){
+        dataInitalize(0, 20, true)
+        managePaginationLength();
+    }else{
+        dataInitalize(0, 20)
+        managePaginationLength();
+    }
+
+    // console.log(activeFilters);
+    document.getElementById("chips").innerHTML = '';
+    for(let i = 0; i < activeFilters.length; i++){
+        document.getElementById("chips").innerHTML += '<div class="chip ' + activeFilters[i].split(" ")[0].toString() + '"><p>' + activeFilters[i] + '</p><a href="#searchFilters" onClick="closeChip(this)" class="close" style="padding: 8px;"><i class="fa fa-close" aria-hidden="true"></i></a></div>';
+    }
+    if(activeFilters.length !== 0){
+        document.getElementById("chips").innerHTML += '<a href="#searchFilters" onClick="clearAllFilters()" class="chip Clear"><p>Clear All</p></a>'
+    }else{
+        document.getElementById("chips").innerHTML = ''
+    }  
+    
+}
+
+
+
+// Call this function to fix pagination length when changing data
+function managePaginationLength(){
+    document.getElementById("nums").innerHTML = "";
+    startResults = 0;
+    endResults = 20;
+    let length = Math.ceil(limitedFullArray.length/20);
+
+    for(let i = 0; i < length; i++){
+        if(i == 0){
+            document.getElementById("nums").innerHTML += '<a onClick="clickFunction(this)" href="#searchFilters"><h5 class="navLink 1 active">1</h5></a>'
+        }else{
+            document.getElementById("nums").innerHTML += '<a onClick="clickFunction(this)" href="#searchFilters"><h5 class="navLink ' + parseInt(i+1) + '">' + parseInt(i+1) + '</h5></a>'
+        }
+       
+    }
+
+    let navArrows = document.getElementsByClassName('nav');
+    navArrows[0].classList.add('disabled')
+    navArrows[1].classList.remove('disabled')
+}
+
+
 
 
 // Pagination click function
@@ -158,14 +303,18 @@ function clickFunction(element){
         
     }else if(element.classList.contains('navNext')){
         navArrows[0].classList.remove('disabled');
-        shuffle(myJson);
-        dataRandomize();
+        // shuffle(myJson);
+        // dataInitalize();
 
 
         
 
         for( var i = 0; i < allNums.length; i++){
             if(allNums[i].classList.contains('active')){
+                startResults += 20;
+                endResults += 20;
+                // console.log(startResults + " " + endResults)
+                activeFilters.includes("Accepting New Patients") ? dataInitalize(startResults, endResults, true) : dataInitalize(startResults, endResults);
                 allNums[i].classList.remove('active');
                 allNums[i+1].classList.add('active');
                 break;
@@ -181,11 +330,15 @@ function clickFunction(element){
         
     }else if(element.classList.contains('navPrev')){
         navArrows[1].classList.remove('disabled');
-        shuffle(myJson);
-        dataRandomize();
+        // shuffle(myJson);
+        // dataInitalize();
 
         for( var i = 0; i < allNums.length; i++){
             if(allNums[i].classList.contains('active')){
+                startResults -= 20;
+                endResults -= 20;
+                // console.log(startResults + " " + endResults)
+                activeFilters.includes("Accepting New Patients") ? dataInitalize(startResults, endResults, true) : dataInitalize(startResults, endResults);
                 allNums[i].classList.remove('active');
                 allNums[i-1].classList.add('active');
                 break;
@@ -203,26 +356,44 @@ function clickFunction(element){
         if(target.classList.contains('active')){
            
         }else{
-            shuffle(myJson);
-            dataRandomize();
+            // shuffle(myJson);
+            // dataInitalize();
             for( var i = 0; i < allNums.length; i++){
                 allNums[i].classList.remove('active');
             }
 
             target.classList.add('active');
 
+
             if(target == allNums[0]){
+                startResults = 0;
+                endResults = 20;
+                // console.log(startResults + " " + endResults)
+                activeFilters.includes("Accepting New Patients") ? dataInitalize(startResults, endResults, true) : dataInitalize(startResults, endResults);
                 navArrows[0].classList.add('disabled')
                 navArrows[1].classList.remove('disabled')
             }else if(target == allNums[allNums.length - 1]){
+                startResults = (allNums.length - 1) * 20;
+                endResults = limitedFullArray.length;
+                // console.log(startResults + " " + endResults)
+                activeFilters.includes("Accepting New Patients") ? dataInitalize(startResults, endResults, true) : dataInitalize(startResults, endResults);
                 navArrows[0].classList.remove('disabled')
                 navArrows[1].classList.add('disabled')
             }else{
                 for(var i = 0; i < navArrows.length; i++){
                     navArrows[i].classList.remove('disabled')
                 }
+
+                startResults = (parseInt(target.innerText)-1) * 20
+                endResults = (parseInt(target.innerText)-1) * 20 + 20
+                // console.log(startResults + " " + endResults)
+                activeFilters.includes("Accepting New Patients") ? dataInitalize(startResults, endResults, true) : dataInitalize(startResults, endResults);
+            
+               
+                
             }
             
         }
     }
+    
 }
