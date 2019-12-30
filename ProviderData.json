@@ -1,283 +1,1129 @@
 var myJson = [
     {
-        "name": "John Smith",
-        "practice": "ACME Medical Associates",
-        "address": "2003 Forbes Ave <br/> Pittsburgh, PA 15219",
-        "phone": "(412) 261-4041",
-        "distance": "0.75"
+      "_id": "5e0a1a721f0799886cd2cdaf",
+      "firstName": "Mallory",
+      "lastName": "Goodwin",
+      "name": "Mallory Goodwin",
+      "practice": "Alliance Family Practice",
+      "address": "599 Pooles Lane <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 539-8715",
+      "distance": 3.3,
+      "acceptingNewPatients": true
     },
     {
-        "name": "Mariana Whitehead",
-        "practice": "Whitehead Medical Group",
-        "address": "909 Adelaide St <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "0.40"
+      "_id": "5e0a1a72f71f432294c12309",
+      "firstName": "May",
+      "lastName": "Miller",
+      "name": "May Miller",
+      "practice": "Pine Care Associates",
+      "address": "579 Downing Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 468-3498",
+      "distance": 0.3,
+      "acceptingNewPatients": false
     },
     {
-        "name": "April Hook",
-        "practice": "Campbell Medical Associates",
-        "address": "648 Herron Ave <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "1.25"
+      "_id": "5e0a1a7277896fc7e57b81c0",
+      "firstName": "Annette",
+      "lastName": "Gillespie",
+      "name": "Annette Gillespie",
+      "practice": "Rosewood Medical Associates",
+      "address": "171 Loring Avenue <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 94-710",
+      "distance": 3,
+      "acceptingNewPatients": false
     },
     {
-        "name": "Benjamin Guzman",
-        "practice": "Central Outreach Wellness Center",
-        "address": "42 Wallaby Way <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "1.75"
+      "_id": "5e0a1a72c2c6d7c938bf223f",
+      "firstName": "Potts",
+      "lastName": "Zimmerman",
+      "name": "Potts Zimmerman",
+      "practice": "Summit Clinical Center",
+      "address": "146 Powell Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 555-8292",
+      "distance": 3.8,
+      "acceptingNewPatients": true
     },
     {
-        "name": "Beatrice Brewer",
-        "practice": "Central Outreach Sellness Center",
-        "address": "909 Poplar St <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "2.25"
+      "_id": "5e0a1a72add2911341201651",
+      "firstName": "Mara",
+      "lastName": "Arnold",
+      "name": "Mara Arnold",
+      "practice": "East Clinical Center",
+      "address": "896 Beaver Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 999-4958",
+      "distance": 4.1,
+      "acceptingNewPatients": true
     },
     {
-        "name": "Abubakar Noble",
-        "practice": "UPMC Mercy",
-        "address": "2200 Bently Dr <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "2.25"
+      "_id": "5e0a1a72c7c35751fe2c70a5",
+      "firstName": "Acosta",
+      "lastName": "Bright",
+      "name": "Acosta Bright",
+      "practice": "Bright & Smith Pediatrics",
+      "address": "728 Jamaica Avenue <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 969-3000",
+      "distance": 5,
+      "acceptingNewPatients": true
     },
     {
-        "name": "Sydney Schroede",
-        "practice": "UPMC Mercy",
-        "address": "648 Herron Ave <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "0.25"
+      "_id": "5e0a1a7233e5ab5dd54b8934",
+      "firstName": "Mclaughlin",
+      "lastName": "Barker",
+      "name": "Mclaughlin Barker",
+      "practice": "Barker Associates",
+      "address": "499 Cyrus Avenue <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 243-1443",
+      "distance": 2.5,
+      "acceptingNewPatients": true
     },
     {
-        "name": "Myrtle Cooper",
-        "practice": "UPMC Mercy",
-        "address": "1005 Sun Valley Ln <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "0.25"
+      "_id": "5e0a1a729240d9be6053aa59",
+      "firstName": "Marquez",
+      "lastName": "Holcomb",
+      "name": "Marquez Holcomb",
+      "practice": "Holcomb Family Medical Center",
+      "address": "133 Pioneer Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 460-4080",
+      "distance": 3.4,
+      "acceptingNewPatients": true
     },
     {
-        "name": "Fred Bradley",
-        "practice": "Pittsburgh Mercy Family Health Center",
-        "address": "313 Ludlow Rd <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "3.5"
+      "_id": "5e0a1a726011a1138a09ebc9",
+      "firstName": "Jefferson",
+      "lastName": "Estes",
+      "name": "Jefferson Estes",
+      "practice": "Estes & Little Medical Practice",
+      "address": "164 Kay Court <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 870-8287",
+      "distance": 4.4,
+      "acceptingNewPatients": false
     },
     {
-        "name": "Katherine Bowen",
-        "practice": "Bowen House Family Care Center",
-        "address": "109 Meandering Ln <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "3"
+      "_id": "5e0a1a7284a90244d18717d6",
+      "firstName": "Melisa",
+      "lastName": "Randolph",
+      "name": "Melisa Randolph",
+      "practice": "Beacon Family Health Center",
+      "address": "411 Horace Court <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 615-4102",
+      "distance": 1.5,
+      "acceptingNewPatients": false
     },
     {
-        "name": "Jordan Cobb",
-        "practice": "Greater Pittsburgh Pediatric Center",
-        "address": "39372 Forbes Ave <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "1"
+      "_id": "5e0a1a723249e01e662642c7",
+      "firstName": "Stokes",
+      "lastName": "Hubbard",
+      "name": "Stokes Hubbard",
+      "practice": "East Liberty General Care",
+      "address": "439 Fayette Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 7-5265",
+      "distance": 3,
+      "acceptingNewPatients": true
     },
     {
-        "name": "Steve King",
-        "practice": "North Side Christian Health Center",
-        "address": "307 Rock Rd <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "2"
+      "_id": "5e0a1a72ea72eb37c063f015",
+      "firstName": "Natalia",
+      "lastName": "Sims",
+      "name": "Natalia Sims",
+      "practice": "Sims Care Center",
+      "address": "206 Robert Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 2-27",
+      "distance": 2,
+      "acceptingNewPatients": true
     },
     {
-        "name": "Nicole Ross",
-        "practice": "East Libery Family Care Associates",
-        "address": "222 Bates St <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "2.5"
+      "_id": "5e0a1a727dd05ad0fd9c7183",
+      "firstName": "Kirk",
+      "lastName": "Berg",
+      "name": "Kirk Berg",
+      "practice": "Greenlawn Health Center",
+      "address": "275 Oriental Boulevard <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 663-7434",
+      "distance": 1.4,
+      "acceptingNewPatients": false
     },
     {
-        "name": "Earl Bennett",
-        "practice": "University of Pittsburgh Family Medicine",
-        "address": "9099 Liberty Ave <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "5"
+      "_id": "5e0a1a724a63a1466fdfc095",
+      "firstName": "Jackson",
+      "lastName": "English",
+      "name": "Jackson English",
+      "practice": "English & Little Clinic",
+      "address": "878 Metropolitan Avenue <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 67-5659",
+      "distance": 1,
+      "acceptingNewPatients": false
     },
     {
-        "name": "Kathleen Peterson",
-        "practice": "West Medicine Associates",
-        "address": "313 Clemente Ln <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "4.25"
+      "_id": "5e0a1a722790d55ad570205a",
+      "firstName": "Leslie",
+      "lastName": "Elliott",
+      "name": "Leslie Elliott",
+      "practice": "Broadwater Care Center",
+      "address": "191 Joralemon Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 481-1346",
+      "distance": 2.8,
+      "acceptingNewPatients": true
     },
     {
-        "name": "Judy Torres",
-        "practice": "East End Family Practice",
-        "address": "404 NoRoad Ln <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "4.5"
+      "_id": "5e0a1a723a698d17e9985d75",
+      "firstName": "Stafford",
+      "lastName": "Whitley",
+      "name": "Stafford Whitley",
+      "practice": "North Wellness Center",
+      "address": "345 Sedgwick Place <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 270-3021",
+      "distance": 3.3,
+      "acceptingNewPatients": true
     },
     {
-        "name": "Sara Powell",
-        "practice": "SP Medical Practice",
-        "address": "78 South St <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "5.25"
+      "_id": "5e0a1a724165b7b654182f7c",
+      "firstName": "Wynn",
+      "lastName": "Stephenson",
+      "name": "Wynn Stephenson",
+      "practice": "Stephenson & Little Wellness Center",
+      "address": "855 Hicks Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 603-5220",
+      "distance": 2.5,
+      "acceptingNewPatients": true
     },
     {
-        "name": "Douglas Patterson",
-        "practice": "Patterson & Sons Family Practice",
-        "address": "22398 Main St <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "3.75"
+      "_id": "5e0a1a7247ddc081f7f58293",
+      "firstName": "Nikki",
+      "lastName": "Calhoun",
+      "name": "Nikki Calhoun",
+      "practice": "Rosewood Associates",
+      "address": "785 Durland Place <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 799-4936",
+      "distance": 0.9,
+      "acceptingNewPatients": true
     },
     {
-        "name": "Carlos Washington",
-        "practice": "Ruth & Little Family Medicine",
-        "address": "101 Breakpoint Ave <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "2.75"
+      "_id": "5e0a1a721d27c794f50437eb",
+      "firstName": "Michael",
+      "lastName": "Garner",
+      "name": "Michael Garner",
+      "practice": "South Medical Practice",
+      "address": "776 Temple Court <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 816-4176",
+      "distance": 4.7,
+      "acceptingNewPatients": true
     },
     {
-        "name": "Rebecca Wright",
-        "practice": "General Academic Pediatrics",
-        "address": "762 Juniper Ct <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "1"
+      "_id": "5e0a1a72eec09af166322991",
+      "firstName": "James",
+      "lastName": "Austin",
+      "name": "James Austin",
+      "practice": "Greenlawn Clinic",
+      "address": "896 Sullivan Place <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 935-8378",
+      "distance": 2.1,
+      "acceptingNewPatients": false
     },
     {
-        "name": "Naeem Daugherty",
-        "practice": "Pine Rest Medical Center",
-        "address": "9099 Forbes Ave <br/> Pittsburgh, PA 15219",
-        "phone": "(412) 261-4041",
-        "distance": "0.75"
+      "_id": "5e0a1a7202199a1c762f2136",
+      "firstName": "Claire",
+      "lastName": "Washington",
+      "name": "Claire Washington",
+      "practice": "Silver Oak Health Center",
+      "address": "965 College Place <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 774-7374",
+      "distance": 4.6,
+      "acceptingNewPatients": true
     },
     {
-        "name": "Hazel Higgs",
+      "_id": "5e0a1a72740ef0b63136c237",
+      "firstName": "Benjamin",
+      "lastName": "Hammond",
+      "name": "Benjamin Hammond",
+      "practice": "North Medical Practice",
+      "address": "249 Dearborn Court <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 209-7225",
+      "distance": 4,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a7271566bcddc957fdf",
+      "firstName": "Diane",
+      "lastName": "Burris",
+      "name": "Diane Burris",
+      "practice": "Burris Family Medical Center",
+      "address": "582 Karweg Place <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 938-9137",
+      "distance": 5,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a72f0c1f1aa622ebbf2",
+      "firstName": "Small",
+      "lastName": "Kennedy",
+      "name": "Small Kennedy",
+      "practice": "Silver Oak Clinical Center",
+      "address": "754 Box Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 791-4918",
+      "distance": 1.5,
+      "acceptingNewPatients": false
+    },
+    {
+      "_id": "5e0a1a726345e7b0be1720ed",
+      "firstName": "Florine",
+      "lastName": "Sexton",
+      "name": "Florine Sexton",
+      "practice": "Sexton Medical Clinic",
+      "address": "581 Adams Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 351-3319",
+      "distance": 0.5,
+      "acceptingNewPatients": false
+    },
+    {
+      "_id": "5e0a1a72d62f206dad5af5a2",
+      "firstName": "Patel",
+      "lastName": "Nicholson",
+      "name": "Patel Nicholson",
+      "practice": "White Water General Care",
+      "address": "888 Fillmore Place <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 3-6341",
+      "distance": 4.3,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a72a9358df456a7868a",
+      "firstName": "Neva",
+      "lastName": "Allison",
+      "name": "Neva Allison",
+      "practice": "ACME Family Health Center",
+      "address": "648 Dahill Road <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 620-2893",
+      "distance": 2.7,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a72c18ddd5ce42199f2",
+      "firstName": "Sherman",
+      "lastName": "Rivas",
+      "name": "Sherman Rivas",
+      "practice": "Grand Wilow Care Associates",
+      "address": "526 Brightwater Court <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 342-6880",
+      "distance": 1.8,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a722a4abb75f3b0b797",
+      "firstName": "Lucia",
+      "lastName": "Banks",
+      "name": "Lucia Banks",
+      "practice": "Hillsboro Family Medical Center",
+      "address": "477 Elliott Walk <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 29-6306",
+      "distance": 0.5,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a7295beec7ad764a586",
+      "firstName": "Earline",
+      "lastName": "Daugherty",
+      "name": "Earline Daugherty",
+      "practice": "Grand Wilow Health Center",
+      "address": "460 Story Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 737-8592",
+      "distance": 4.3,
+      "acceptingNewPatients": false
+    },
+    {
+      "_id": "5e0a1a72e82af6924ed4a5d7",
+      "firstName": "Roth",
+      "lastName": "Snow",
+      "name": "Roth Snow",
+      "practice": "Snow & Smith Care Associates",
+      "address": "359 Henderson Walk <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 97-4385",
+      "distance": 2.5,
+      "acceptingNewPatients": false
+    },
+    {
+      "_id": "5e0a1a729c1efdac2c8716df",
+      "firstName": "Sears",
+      "lastName": "Everett",
+      "name": "Sears Everett",
+      "practice": "North Side Family Medical Center",
+      "address": "883 Harrison Place <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 899-5395",
+      "distance": 0.6,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a7242ebca120d9a591d",
+      "firstName": "Mathews",
+      "lastName": "Oliver",
+      "name": "Mathews Oliver",
+      "practice": "Silver Oak General Practice",
+      "address": "662 Brevoort Place <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 889-6604",
+      "distance": 2.5,
+      "acceptingNewPatients": false
+    },
+    {
+      "_id": "5e0a1a72587029e201accdcd",
+      "firstName": "Melody",
+      "lastName": "Snyder",
+      "name": "Melody Snyder",
+      "practice": "Laguna Clinical Center",
+      "address": "125 Jay Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 373-5393",
+      "distance": 4.9,
+      "acceptingNewPatients": false
+    },
+    {
+      "_id": "5e0a1a72171a859d887c6676",
+      "firstName": "Coleen",
+      "lastName": "Bonner",
+      "name": "Coleen Bonner",
+      "practice": "Bonner Medical Group",
+      "address": "727 Elizabeth Place <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 935-1814",
+      "distance": 1.7,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a72535bb7c23ff25436",
+      "firstName": "Ethel",
+      "lastName": "Rodgers",
+      "name": "Ethel Rodgers",
+      "practice": "Central Outreach Medical Associates",
+      "address": "289 Sutton Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 536-564",
+      "distance": 4.5,
+      "acceptingNewPatients": false
+    },
+    {
+      "_id": "5e0a1a728712ed35dd8b4682",
+      "firstName": "Juana",
+      "lastName": "Newman",
+      "name": "Juana Newman",
+      "practice": "Newman Family Health Center",
+      "address": "405 Turnbull Avenue <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 656-6565",
+      "distance": 4.9,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a72387c36668e075da8",
+      "firstName": "Briana",
+      "lastName": "Owens",
+      "name": "Briana Owens",
+      "practice": "Owens Pediatrics",
+      "address": "266 Ocean Avenue <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 665-1430",
+      "distance": 3,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a72ea2b818863c16144",
+      "firstName": "Vang",
+      "lastName": "Salinas",
+      "name": "Vang Salinas",
+      "practice": "Pine Rest Wellness Center",
+      "address": "882 Rutland Road <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 10-5832",
+      "distance": 1.6,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a729f45688f04a1e8df",
+      "firstName": "Woods",
+      "lastName": "Roman",
+      "name": "Woods Roman",
+      "practice": "Roman Family Practice",
+      "address": "513 Fenimore Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 352-8435",
+      "distance": 0.6,
+      "acceptingNewPatients": false
+    },
+    {
+      "_id": "5e0a1a7243c2e47c6bf76d56",
+      "firstName": "Doris",
+      "lastName": "Hardin",
+      "name": "Doris Hardin",
+      "practice": "Central Outreach Wellness Center",
+      "address": "415 Raleigh Place <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 633-1414",
+      "distance": 0.6,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a72ff4468561083b019",
+      "firstName": "Lesa",
+      "lastName": "Villarreal",
+      "name": "Lesa Villarreal",
+      "practice": "Pine Medical Associates",
+      "address": "765 King Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 398-8217",
+      "distance": 3.5,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a72cda2bcd396a37825",
+      "firstName": "Margarita",
+      "lastName": "Edwards",
+      "name": "Margarita Edwards",
+      "practice": "Alliance Pediatrics",
+      "address": "627 Victor Road <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 107-4693",
+      "distance": 3.3,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a728727bff773119105",
+      "firstName": "Deborah",
+      "lastName": "Daniel",
+      "name": "Deborah Daniel",
+      "practice": "White Water Medical Practice",
+      "address": "125 Lafayette Avenue <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 179-9860",
+      "distance": 1.1,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a72a3555d4a4c3a7ac0",
+      "firstName": "Savannah",
+      "lastName": "Schwartz",
+      "name": "Savannah Schwartz",
+      "practice": "East Liberty Wellness Center",
+      "address": "999 Dorset Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 154-9080",
+      "distance": 3.3,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a728c51745094f1cbac",
+      "firstName": "Marilyn",
+      "lastName": "Bridges",
+      "name": "Marilyn Bridges",
+      "practice": "Marilyn Bridges Medical Group",
+      "address": "292 Beacon Court <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 614-7710",
+      "distance": 2.1,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a727489624c81af69b7",
+      "firstName": "Nelda",
+      "lastName": "Mckenzie",
+      "name": "Nelda Mckenzie",
+      "practice": "Beacon Associates",
+      "address": "398 Anchorage Place <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 902-5471",
+      "distance": 4.3,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a72f07f71a6aa1bc56f",
+      "firstName": "Becker",
+      "lastName": "Mcgowan",
+      "name": "Becker Mcgowan",
+      "practice": "UPMC Medical Practice",
+      "address": "520 Hancock Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 749-705",
+      "distance": 4.1,
+      "acceptingNewPatients": false
+    },
+    {
+      "_id": "5e0a1a72188342cb70828454",
+      "firstName": "Georgia",
+      "lastName": "Mcdaniel",
+      "name": "Georgia Mcdaniel",
+      "practice": "Alliance Family Health Center",
+      "address": "986 Glen Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 161-633",
+      "distance": 3,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a722f3b35a9e96e8395",
+      "firstName": "Rosalinda",
+      "lastName": "Weeks",
+      "name": "Rosalinda Weeks",
+      "practice": "East Family Health Center",
+      "address": "246 Auburn Place <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 929-5567",
+      "distance": 0.9,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a728490fa7939c38990",
+      "firstName": "Darla",
+      "lastName": "Walters",
+      "name": "Darla Walters",
+      "practice": "North Associates",
+      "address": "585 Tabor Court <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 197-1888",
+      "distance": 1.4,
+      "acceptingNewPatients": false
+    },
+    {
+      "_id": "5e0a1a724549933f8e0cc4b8",
+      "firstName": "Virgie",
+      "lastName": "Dawson",
+      "name": "Virgie Dawson",
+      "practice": "Pine General Practice",
+      "address": "316 Coleman Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 169-8715",
+      "distance": 4.7,
+      "acceptingNewPatients": false
+    },
+    {
+      "_id": "5e0a1a729830c5c9dd77dbb3",
+      "firstName": "Quinn",
+      "lastName": "Brooks",
+      "name": "Quinn Brooks",
+      "practice": "Pine Medical Associates",
+      "address": "863 Bryant Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 613-824",
+      "distance": 4.7,
+      "acceptingNewPatients": false
+    },
+    {
+      "_id": "5e0a1a72d0e57df0de81a2d4",
+      "firstName": "Park",
+      "lastName": "Scott",
+      "name": "Park Scott",
+      "practice": "Beacon Care Center",
+      "address": "504 Florence Avenue <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 467-7926",
+      "distance": 1.1,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a7217712e9230fb5726",
+      "firstName": "Noelle",
+      "lastName": "Bowman",
+      "name": "Noelle Bowman",
+      "practice": "Bowman & Little Family Health Center",
+      "address": "744 Hanson Place <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 725-1603",
+      "distance": 1.1,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a72a0378552be09cb0d",
+      "firstName": "Roxanne",
+      "lastName": "Thompson",
+      "name": "Roxanne Thompson",
+      "practice": "Alliance Wellness Center",
+      "address": "609 Morton Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 806-9230",
+      "distance": 2.3,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a72d1018d971b0467f7",
+      "firstName": "Gaines",
+      "lastName": "Wheeler",
+      "name": "Gaines Wheeler",
+      "practice": "ACME Care Center",
+      "address": "130 Kenmore Terrace <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 773-2980",
+      "distance": 0.8,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a72995628891d690f18",
+      "firstName": "Aileen",
+      "lastName": "Finley",
+      "name": "Aileen Finley",
+      "practice": "Grand Wilow Associates",
+      "address": "998 Bayview Avenue <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 952-431",
+      "distance": 2,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a72b7308779ea0f87c1",
+      "firstName": "Lane",
+      "lastName": "Knox",
+      "name": "Lane Knox",
+      "practice": "South Associates",
+      "address": "493 Lawrence Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 655-647",
+      "distance": 1.6,
+      "acceptingNewPatients": false
+    },
+    {
+      "_id": "5e0a1a72126ad38f9bf3b30a",
+      "firstName": "Flores",
+      "lastName": "Pruitt",
+      "name": "Flores Pruitt",
+      "practice": "Eden Medical Technology Center",
+      "address": "900 Bogart Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 886-4911",
+      "distance": 3.3,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a729ea7a2ad95079c44",
+      "firstName": "Delacruz",
+      "lastName": "Johnson",
+      "name": "Delacruz Johnson",
+      "practice": "Johnson & Little Clinic",
+      "address": "245 Midwood Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 835-3195",
+      "distance": 2.7,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a72c9b1b3c754bf2476",
+      "firstName": "Phillips",
+      "lastName": "Franklin",
+      "name": "Phillips Franklin",
+      "practice": "East Liberty Clinic",
+      "address": "416 Dunne Place <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 970-8423",
+      "distance": 4.7,
+      "acceptingNewPatients": false
+    },
+    {
+      "_id": "5e0a1a72f360925cfdaaafeb",
+      "firstName": "Oneill",
+      "lastName": "Gilmore",
+      "name": "Oneill Gilmore",
+      "practice": "Grand Wilow Medical Practice",
+      "address": "179 Monroe Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 386-6435",
+      "distance": 2.9,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a7200d70656a3d70995",
+      "firstName": "Michael",
+      "lastName": "Mcclain",
+      "name": "Michael Mcclain",
+      "practice": "East Liberty Clinic",
+      "address": "768 Locust Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 148-5632",
+      "distance": 2.1,
+      "acceptingNewPatients": false
+    },
+    {
+      "_id": "5e0a1a7255996be1965e3d16",
+      "firstName": "Elva",
+      "lastName": "Rush",
+      "name": "Elva Rush",
+      "practice": "East Liberty Clinical Center",
+      "address": "642 Court Square <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 655-5007",
+      "distance": 0.5,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a7247c4df06b32dc6c2",
+      "firstName": "Johns",
+      "lastName": "Mathews",
+      "name": "Johns Mathews",
+      "practice": "Grand Wilow Medical Technology Center",
+      "address": "377 National Drive <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 518-2583",
+      "distance": 0.6,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a722cce852c26561e2c",
+      "firstName": "Todd",
+      "lastName": "Cook",
+      "name": "Todd Cook",
+      "practice": "Hillsboro Family Practice",
+      "address": "822 Danforth Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 214-1832",
+      "distance": 0.9,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a729caa8f3a4ed2b353",
+      "firstName": "Clara",
+      "lastName": "Maddox",
+      "name": "Clara Maddox",
+      "practice": "Clara Maddox Associates",
+      "address": "455 Randolph Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 439-6602",
+      "distance": 0.1,
+      "acceptingNewPatients": false
+    },
+    {
+      "_id": "5e0a1a72da06211fa1c9a9ae",
+      "firstName": "Elaine",
+      "lastName": "Irwin",
+      "name": "Elaine Irwin",
+      "practice": "Greenlawn Care Associates",
+      "address": "131 Stuart Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 593-1349",
+      "distance": 4.6,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a721a30c3eb22a72f5b",
+      "firstName": "Heidi",
+      "lastName": "Welch",
+      "name": "Heidi Welch",
+      "practice": "Welch & Little Hospital Center",
+      "address": "502 Rockaway Avenue <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 475-5129",
+      "distance": 1.6,
+      "acceptingNewPatients": false
+    },
+    {
+      "_id": "5e0a1a72bcbf921fd91b29ed",
+      "firstName": "Matthews",
+      "lastName": "Ortiz",
+      "name": "Matthews Ortiz",
+      "practice": "Alliance Medical Associates",
+      "address": "776 Ovington Court <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 537-7713",
+      "distance": 3,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a7294a2427bddd8ab30",
+      "firstName": "Page",
+      "lastName": "Pollard",
+      "name": "Page Pollard",
+      "practice": "Pollard & Little Family Medicine",
+      "address": "294 Kenilworth Place <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 128-4693",
+      "distance": 4.2,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a72022338d31d64552a",
+      "firstName": "Cobb",
+      "lastName": "Campbell",
+      "name": "Cobb Campbell",
+      "practice": "Campbell Hospital Center",
+      "address": "400 Langham Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 118-6535",
+      "distance": 2.7,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a7270aa9fb019d5c915",
+      "firstName": "Jennings",
+      "lastName": "Huffman",
+      "name": "Jennings Huffman",
+      "practice": "Alliance Medical Technology Center",
+      "address": "409 Joval Court <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 595-8241",
+      "distance": 3,
+      "acceptingNewPatients": false
+    },
+    {
+      "_id": "5e0a1a72ae0ad587ca9b916e",
+      "firstName": "Estelle",
+      "lastName": "Pierce",
+      "name": "Estelle Pierce",
+      "practice": "Summit Clinic",
+      "address": "997 Perry Place <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 945-6114",
+      "distance": 3.3,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a72b3987859ee7369d8",
+      "firstName": "Lindsey",
+      "lastName": "Mack",
+      "name": "Lindsey Mack",
+      "practice": "Beacon Medical Practice",
+      "address": "512 Bills Place <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 55-4120",
+      "distance": 0.9,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a7231e13e8c9e01168d",
+      "firstName": "Graham",
+      "lastName": "Mullen",
+      "name": "Graham Mullen",
+      "practice": "Mullen & Little Hospital Center",
+      "address": "815 Grafton Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 477-8273",
+      "distance": 0.9,
+      "acceptingNewPatients": true
+    },
+    {
+      "_id": "5e0a1a72ece98d61203aa0e9",
+      "firstName": "Kathie",
+      "lastName": "Salas",
+      "name": "Kathie Salas",
+      "practice": "Rosewood Medical Practice",
+      "address": "828 Holly Street <br/> Pittsburgh, PA 15219",
+      "phone": "(412) 224-1082",
+      "distance": 2.5,
+      "acceptingNewPatients": true
+    },
+    {
+        "_id": "5e0a20e9598b292ae3879a3f",
+        "firstName": "Susanne",
+        "lastName": "Mosley",
+        "name": "Susanne Mosley",
+        "practice": "Summit Clinic",
+        "address": "818 Norman Avenue <br/> Pittsburgh, PA 15219",
+        "phone": "(412) 439-909",
+        "distance": 5,
+        "acceptingNewPatients": true
+      },
+      {
+        "_id": "5e0a20e96155fa6b24e84bb5",
+        "firstName": "Myrna",
+        "lastName": "Owen",
+        "name": "Myrna Owen",
+        "practice": "Rosewood Health Center",
+        "address": "177 Vista Place <br/> Pittsburgh, PA 15219",
+        "phone": "(412) 26-2416",
+        "distance": 0.2,
+        "acceptingNewPatients": false
+      },
+      {
+        "_id": "5e0a20e907119ce1aa4260c6",
+        "firstName": "Leach",
+        "lastName": "Patterson",
+        "name": "Leach Patterson",
+        "practice": "Pine General Practice",
+        "address": "949 Berriman Street <br/> Pittsburgh, PA 15219",
+        "phone": "(412) 113-3102",
+        "distance": 2.7,
+        "acceptingNewPatients": false
+      },
+      {
+        "_id": "5e0a20e9a79c5430512c9918",
+        "firstName": "Cindy",
+        "lastName": "Oconnor",
+        "name": "Cindy Oconnor",
+        "practice": "North Side Clinic",
+        "address": "863 Willoughby Street <br/> Pittsburgh, PA 15219",
+        "phone": "(412) 440-5367",
+        "distance": 3.9,
+        "acceptingNewPatients": false
+      },
+      {
+        "_id": "5e0a20e9b97c0ffdf895b7b7",
+        "firstName": "Clements",
+        "lastName": "Ayers",
+        "name": "Clements Ayers",
+        "practice": "Beacon Family Medical Center",
+        "address": "923 Quincy Street <br/> Pittsburgh, PA 15219",
+        "phone": "(412) 697-9060",
+        "distance": 4.2,
+        "acceptingNewPatients": true
+      },
+      {
+        "_id": "5e0a20e9202b1a2497735fc8",
+        "firstName": "Suarez",
+        "lastName": "Richard",
+        "name": "Suarez Richard",
+        "practice": "Whitehead Care Center",
+        "address": "424 Battery Avenue <br/> Pittsburgh, PA 15219",
+        "phone": "(412) 625-3270",
+        "distance": 5,
+        "acceptingNewPatients": true
+      },
+      {
+        "_id": "5e0a20e931cc9e144e520af8",
+        "firstName": "Oneal",
+        "lastName": "Juarez",
+        "name": "Oneal Juarez",
+        "practice": "Whitehead Health Center",
+        "address": "323 Bayview Place <br/> Pittsburgh, PA 15219",
+        "phone": "(412) 986-8676",
+        "distance": 4.3,
+        "acceptingNewPatients": false
+      },
+      {
+        "_id": "5e0a20e985eb0ad7a9e3dd5c",
+        "firstName": "Jordan",
+        "lastName": "Howell",
+        "name": "Jordan Howell",
+        "practice": "Howell Family Medical Center",
+        "address": "246 Opal Court <br/> Pittsburgh, PA 15219",
+        "phone": "(412) 567-2027",
+        "distance": 1.7,
+        "acceptingNewPatients": true
+      },
+      {
+        "_id": "5e0a20e92b5240a695c90059",
+        "firstName": "Bradford",
+        "lastName": "Cooley",
+        "name": "Bradford Cooley",
+        "practice": "Cooley Medical Clinic",
+        "address": "649 Durland Place <br/> Pittsburgh, PA 15219",
+        "phone": "(412) 399-1293",
+        "distance": 4,
+        "acceptingNewPatients": true
+      },
+      {
+        "_id": "5e0a210daf86966f757e4ce0",
+        "firstName": "Willa",
+        "lastName": "Owen",
+        "name": "Willa Owen",
+        "practice": "North Wellness Center",
+        "address": "782 Wogan Terrace <br/> Pittsburgh, PA 15219",
+        "phone": "(412) 496-2938",
+        "distance": 3.2,
+        "acceptingNewPatients": true
+      },
+      {
+        "_id": "5e0a210d0c6c4ec4101cec58",
+        "firstName": "French",
+        "lastName": "Morrison",
+        "name": "French Morrison",
+        "practice": "Broadwater Medical Practice",
+        "address": "625 Kent Street <br/> Pittsburgh, PA 15219",
+        "phone": "(412) 412-6823",
+        "distance": 3.4,
+        "acceptingNewPatients": false
+      },
+      {
+        "_id": "5e0a210d54542e00fb327265",
+        "firstName": "Marietta",
+        "lastName": "Schneider",
+        "name": "Marietta Schneider",
+        "practice": "Schneider Medical Associates",
+        "address": "513 Loring Avenue <br/> Pittsburgh, PA 15219",
+        "phone": "(412) 546-8734",
+        "distance": 0.1,
+        "acceptingNewPatients": false
+      },
+      {
+        "_id": "5e0a210d59fa909ed6964669",
+        "firstName": "Larsen",
+        "lastName": "Richards",
+        "name": "Larsen Richards",
+        "practice": "Pine Rest Associates",
+        "address": "356 Beacon Court <br/> Pittsburgh, PA 15219",
+        "phone": "(412) 97-3117",
+        "distance": 4.1,
+        "acceptingNewPatients": false
+      },
+      {
+        "_id": "5e0a210d56f55e923f423b08",
+        "firstName": "Eva",
+        "lastName": "Cobb",
+        "name": "Eva Cobb",
+        "practice": "Alliance General Care",
+        "address": "785 Evergreen Avenue <br/> Pittsburgh, PA 15219",
+        "phone": "(412) 979-8999",
+        "distance": 3.7,
+        "acceptingNewPatients": false
+      },
+      {
+        "_id": "5e0a210d8cd51614013499b4",
+        "firstName": "Debra",
+        "lastName": "Duran",
+        "name": "Debra Duran",
+        "practice": "Greenlawn Family Medicine",
+        "address": "633 Hornell Loop <br/> Pittsburgh, PA 15219",
+        "phone": "(412) 298-7530",
+        "distance": 1.9,
+        "acceptingNewPatients": false
+      },
+      {
+        "_id": "5e0a210d94ede5a27d940d2d",
+        "firstName": "Lewis",
+        "lastName": "Heath",
+        "name": "Lewis Heath",
         "practice": "Silver Oak Hospital Center",
-        "address": "200 Beacon St <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "0.40"
-    },
-    {
-        "name": "Ashley Harrison",
-        "practice": "Principal Medical Clinic",
-        "address": "1002 Sharon Ave <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "1.25"
-    },
-    {
-        "name": "Raife Foster",
-        "practice": "Greenlawn Hospital Center",
-        "address": "999 Pintail St <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "1.75"
-    },
-    {
-        "name": "Mina Betts",
-        "practice": "Little River Clinic",
-        "address": "409 Grand Garden St <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "2.25"
-    },
-    {
-        "name": "Sayed Davenport",
-        "practice": "Grand View Family Practice",
-        "address": "187 Adele Ave <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "2.25"
-    },
-    {
-        "name": "Ailsa Collier",
-        "practice": "Summit Associates",
-        "address": "8008 Fleetwood St <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "0.25"
-    },
-    {
-        "name": "Elleanor Dunn",
-        "practice": "Rosewood Family Practice",
-        "address": "100 Sunberry Ln <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "0.25"
-    },
-    {
-        "name": "Jovan Tyson",
-        "practice": "Pittsburgh Oasis Family and Pediatric Health Center",
-        "address": "777 Willow Dr <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "3.5"
-    },
-    {
-        "name": "Philippa Hackett",
-        "practice": "Grand Willow Care Center",
-        "address": "8088 Juniper Ct <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "3"
-    },
-    {
-        "name": "Abdullah Dunne",
-        "practice": "Eden General Care",
-        "address": "12928 Main St <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "1"
-    },
-    {
-        "name": "Amber-Rose Mcguire",
-        "practice": "Alliance Community Hospital",
-        "address": "405 2nd St <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "2"
-    },
-    {
-        "name": "Jayden Ward",
-        "practice": "Hopedale Medical Clinic",
-        "address": "222 Bates St <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "2.5"
-    },
-    {
-        "name": "Olli Simon",
-        "practice": "Springfield General Practice",
-        "address": "207 Cultural Ave <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "5"
-    },
-    {
-        "name": "Beatriz Rossi",
-        "practice": "Broadwater Clinic",
-        "address": "861 Brunner St <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "4.25"
-    },
-    {
-        "name": "Ellie-Mai Anthony",
-        "practice": "Laguna Clinical Center",
-        "address": "228 Scevior Ln <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "4.5"
-    },
-    {
-        "name": "Erin Sullivan",
-        "practice": "Woodland Family Practice",
-        "address": "1000 Woodlake Dr <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "5.25"
-    },
-    {
-        "name": "Evan Zimmerman",
-        "practice": "Hillsboro Medical Technology Center",
-        "address": "1337 Gamer Ct <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "3.75"
-    },
-    {
-        "name": "Gregory Martin",
-        "practice": "Martin Pediatrics",
-        "address": "787 Tobias St <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "2.75"
-    },
-    {
-        "name": "Frank Lang",
-        "practice": "Beacon Community Health Center",
-        "address": "2000 Spooner St <br />Pittsburgh, PA 15219",
-        "phone": "(423) 342-3243",
-        "distance": "1"
-    },
+        "address": "372 Poly Place <br/> Pittsburgh, PA 15219",
+        "phone": "(412) 930-2574",
+        "distance": 0.6,
+        "acceptingNewPatients": true
+      },
+      {
+        "_id": "5e0a210d6b38e5904545e9d5",
+        "firstName": "Dale",
+        "lastName": "George",
+        "name": "Dale George",
+        "practice": "George Care Center",
+        "address": "219 Linden Boulevard <br/> Pittsburgh, PA 15219",
+        "phone": "(412) 206-2609",
+        "distance": 1.8,
+        "acceptingNewPatients": true
+      },
+      {
+        "_id": "5e0a210da765361941fc6bd0",
+        "firstName": "Leticia",
+        "lastName": "Adkins",
+        "name": "Leticia Adkins",
+        "practice": "Adkins General Care",
+        "address": "130 Landis Court <br/> Pittsburgh, PA 15219",
+        "phone": "(412) 285-9116",
+        "distance": 1.8,
+        "acceptingNewPatients": true
+      },
+      {
+        "_id": "5e0a210d71373bc238e7d2cd",
+        "firstName": "Simpson",
+        "lastName": "Barron",
+        "name": "Simpson Barron",
+        "practice": "Barron & Little Wellness Center",
+        "address": "357 Chester Court <br/> Pittsburgh, PA 15219",
+        "phone": "(412) 707-4091",
+        "distance": 3.5,
+        "acceptingNewPatients": false
+      },
+      {
+        "_id": "5e0a210dfacb1f234c093c08",
+        "firstName": "Forbes",
+        "lastName": "Benson",
+        "name": "Forbes Benson",
+        "practice": "South Hospital Center",
+        "address": "258 Gatling Place <br/> Pittsburgh, PA 15219",
+        "phone": "(412) 78-5652",
+        "distance": 4.1,
+        "acceptingNewPatients": false
+      },
+      {
+        "_id": "5e0a210de0e439f5758480a5",
+        "firstName": "Beryl",
+        "lastName": "Osborn",
+        "name": "Beryl Osborn",
+        "practice": "Summit Family Medical Center",
+        "address": "589 Seigel Court <br/> Pittsburgh, PA 15219",
+        "phone": "(412) 808-2773",
+        "distance": 4.3,
+        "acceptingNewPatients": true
+      },
+      {
+        "_id": "5e0a210dae3ccb52ac68138a",
+        "firstName": "Bush",
+        "lastName": "Lynch",
+        "name": "Bush Lynch",
+        "practice": "Greenlawn Family Medical Center",
+        "address": "621 Bartlett Place <br/> Pittsburgh, PA 15219",
+        "phone": "(412) 151-7896",
+        "distance": 3.8,
+        "acceptingNewPatients": true
+      }
+  ]
+
+
+
+
+  // Built this fake data using : https://www.json-generator.com/#
+
+  //[
+//   '{{repeat(100, 3)}}',
+//   {
+//     _id: '{{objectId()}}',
+//     firstName: '{{firstName()}}',
+//     lastName: '{{surname()}}',
+//     name: function(tags){
+//       return this.firstName + ' ' + this.lastName;
+//     },
+//     practice: function (tags) {
+//       var practiceSuff = ['Medical Group', 'Wellness Center', 'Medical Associates', 'Family Health Center', 'Family Medical Center', 'Health Center', 'Care Associates', 'Family Medicine', 'Family Practice', 'Medical Practice', 'Pediatrics', 'Hospital Center', 'Medical Clinic', 'Clinic', 'Associates', 'Care Center', 'General Care', 'General Practice', 'Clinic', 'Clinical Center', 'Medical Technology Center'];
+//       var practicePre = [this.lastName, "ACME", "Laguna", "Hillsboro", this.firstName + " " + this.lastName, "Broadwater", "Alliance", "Grand Wilow", "Rosewood", "Eden", "Summit", "UPMC", "Greenlawn", "Silver Oak", "Pine", "Pine Rest", "Pine Wood", this.lastName + " & Little", this.lastName + " & Smith", "West", "East", "North", "South", "East Liberty", "North Side", "Central Outreach", "Whitehead", "White Water", "Beacon", "Hillsboro", this.lastName, this.lastName, this.lastName];
+//       return practicePre[tags.integer(0, practicePre.length - 1)] + " " + practiceSuff[tags.integer(0, practiceSuff.length - 1)];
+//     },
+//     address: '{{integer(100, 999)}} {{street()}}' +  " <br/> Pittsburgh, PA 15219",
+//     phone: '(412) {{integer(000, 999)}}-{{integer(0000, 9999)}}',
+//     distance: '{{floating(0.1, 5.0)}}',
+//     acceptingNewPatients: '{{bool()}}',
     
-]
+//   }
+// ]

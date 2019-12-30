@@ -100,16 +100,19 @@ body{
     height: 25px;
     background-color: #f5e6f0;
     width: fit-content;
-
+    cursor: pointer;
 }
 
 #searchFiltersHead a{
     font-weight: 600;
 }
 
+
+
 #filter{
     /* background-color: green; */
     display: flex; 
+    align-items: flex-start;
     overflow-x: scroll;
     width: 100%;
     white-space: nowrap;
@@ -131,6 +134,7 @@ body{
 
 #filter .option.active{
     border: 2px solid #27C4A5;
+    background: white;
 }
 
 #filter .option p{
@@ -150,18 +154,27 @@ body{
     color: white !important;
 }
 
+#filter .option.more.active{
+    background-color: white;
+}
+
 .removed{
     display: none;
 }
 
 #filter .container.active{
     color: #27C4A5;
+
+}
+
+#filter .more .container.active{
+    color: #27C4A5;
 }
 
 #filter .option:hover{
-    color: rgb(36, 97, 85);
     border: 2px solid rgb(36, 97, 85);
 }
+
 
 #chips{
     overflow-x: scroll;
@@ -183,17 +196,35 @@ body{
     display: inline-flex;
     align-self: baseline;
     margin-right: 8px;
-    padding: 0px 4px 0 16px;
+    padding: 0 4px 0 16px;
     background-color: rgb(241, 241, 241);
     color: #0E856D;
+    background-color: #CBF2E8;
     border-radius: 30px;
     font-size: 14px;
-    transition: 0.2s;
+    /* transition: 0.2s; */
+}
+
+#chips .chip.Clear{
+    color: #dd2e0b;
+    background-color: #FFF7F5;
+    padding: 8px 16px;
+    cursor: pointer;
 }
 
 
 .chip a{
     color: #0E856D;
+}
+
+.chip p{
+    margin: 0;
+    height: fit-content;
+    align-self: center;
+}
+
+.close{
+    cursor: pointer;
 }
 
 
@@ -260,6 +291,35 @@ body{
     color: black;
 }
 
+#loaderDiv{
+    height: calc(100vh - 188px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader{
+  border: 6px solid white;
+  border-radius: 50%;
+  border-top: 6px solid #af4591;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: spin 1.2s linear infinite; /* Safari */
+  animation: spin 1.2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
 .provider{
     display: flex;
     flex-direction: row;
@@ -310,7 +370,7 @@ body{
 .provider .np{
     color: #383e41;
     font-family: 'Gothic', sans-serif;
-    font-size: .85em;
+    font-size: .95em;
     padding-left: 5px;
 }
 
@@ -389,9 +449,9 @@ body{
     
     text-align: center;
     vertical-align: middle;
-    background-color: #af4591;
-    border-radius: 50%;
-    color: white;
+    background-color: #af4591 !important;
+    border-radius: 50% !important;
+    color: white !important;
     
 }
 
@@ -455,14 +515,14 @@ body{
     display: flex;
     position: -webkit-sticky;
     position: sticky;
-    top: 188;
+    top: 150;
     flex: 7;
     margin: 10px 0px;
     color: white;
     text-align: center;
     justify-content: center;
     flex-direction: column;
-    height: calc(100vh - 188px);
+    height: calc(100vh - 150px);
 }
 
 #googleMap{
@@ -547,13 +607,13 @@ body{
         font-size: 12px;
     }
 
-    #filter .option.hospital{
+    #filter .option.Affiliated{
         display: none;
     }
-    #filter .option.time{
+    #filter .option.Open{
         display: none;
     }
-    #filter .option.handicap{
+    #filter .option.Handicap{
         display: none;
     }
 
@@ -620,13 +680,13 @@ body{
         font-size: 12px;
     }
 
-    #filter .option.hospital{
+    #filter .option.Affiliated{
         display: none;
     }
-    #filter .option.time{
+    #filter .option.Open{
         display: none;
     }
-    #filter .option.handicap{
+    #filter .option.Handicap{
         display: none;
     }
 
