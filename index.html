@@ -15,7 +15,7 @@
                 <div id="searchFilters">
                         <div id="searchFiltersHead">
                                 <a id="editSearch" >Edit Search</a>
-                            <h2 id="searchHead">I'm searching for an <a href="#">Optometrist</a> within <a href="#">5 miles</a> of <a href="#">Pittsburgh, PA</a>.</h2>
+                            <h2 id="searchHead">I'm searching for an <a>Optometrist</a> within <a>5 miles</a> of <a>Pittsburgh, PA</a>.</h2>
                             
                         </div>
            
@@ -46,11 +46,111 @@
                                     </div>
                                 
                                 </a>
+                                <div>
                                 <a href="#searchFilters" onClick="clickFilter(this)" class="option More" >
                                     <div class="container">
                                         <p>More</p>
-                                    </div>                                
+                                        <div style="visibility: hidden;" class="arrow-up"></div> 
+                                    </div>                      
                                 </a>
+                                <span id="moreMenu" class="hidden">
+                                    <div class="moreMenuBG"></div>
+                                    <div class="scrollContainer">
+
+                                            <a class="clear">Clear All</a>
+                                        <div class="mobileMore">
+                                            
+                                        <div id="openTimeMore">
+                                        
+                                                <h4 class="checkboxTitle">Open Time</h4>
+                                            <label class="control control-checkbox">
+                                                Open Evenings
+                                                    <input type="checkbox" />
+                                                <div class="control_indicator"></div>
+                                            </label>
+                                            <label class="control control-checkbox">
+                                                Open Weekends
+                                                    <input type="checkbox" />
+                                                <div class="control_indicator"></div>
+                                            </label>
+                                            <hr>
+                                        </div>
+                                        <!-- <div id="anpMore">
+                                            <label class="control control-checkbox">
+                                                Accepting New Patients
+                                                    <input type="checkbox" />
+                                                <div class="control_indicator"></div>
+                                            </label>
+                                            <hr>
+                                        </div> -->
+                                        <div id="handicapMore">
+                                            <label class="control control-checkbox">
+                                                Handicap Accessible
+                                                    <input type="checkbox" />
+                                                <div class="control_indicator"></div>
+                                            </label>
+                                            <hr>
+                                        </div>
+                                         </div>
+                                        <div id="genderMore">
+                                            <h4 class="checkboxTitle">Provider's Gender</h4>
+                                                <form>
+                                                <label class="control control-radio">
+                                                    Both
+                                                        <input type="radio" name="radio" checked="checked" name="group1" value="option1"/>
+                                                    <div class="control_indicator"></div>
+                                                </label>
+                                                <label class="control control-radio">
+                                                    Male
+                                                        <input type="radio" name="radio" name="group1" value="option1"/>
+                                                    <div class="control_indicator"></div>
+                                                </label>
+                                                <label class="control control-radio">
+                                                    Female
+                                                        <input type="radio" name="radio" name="group1" value="option1"/>
+                                                    <div class="control_indicator"></div>
+                                                </label>
+                                            </form>
+                                            <hr>
+                                        </div>
+                                        <div id="languageMore">
+                                            <h4 class="checkboxTitle">Spoken Language</h4>
+                                            <form>
+                                                <div id="validLanguages"></div>
+                                                <hr style="border-color: #d1d3d4; background-color: #d1d3d4; color: #d1d3d4;">
+                                                <div id="invalidLanguages"></div>
+                                                <div id="invalidLanguagesHidden" class="hidden"></div>
+                                            </form>
+                                            
+                                            
+                                        </div>
+                                        <div class="mobileMore">
+
+                                            <hr>
+                                                <div id="hospitalMore">
+                                                    <h4 class="checkboxTitle">Affiliated Hospitals</h4>
+                                                    <form>
+                                                        <div id="validHospitals"></div>
+                                                        <hr style="border-color: #d1d3d4; background-color: #d1d3d4; color: #d1d3d4;">
+                                                        <div id="invalidHospitals"></div>
+                                                        <div id="invalidHospitalsHidden" class="hidden"></div>
+                                                    </form>
+                                            </div>
+                                        </div>
+
+                                        
+                                    </div> 
+                                    <div style="position: relative; width: 100%;">
+                                        <button style="width: 100%; height: 40px; color: white; background-color: #af4591; border: none; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">Apply Filters</button>
+                                    </div> 
+                                    
+                                </span>
+                                </div>
+                                <style>
+                                    
+                                </style>
+                                    
+                             
                             </div>
                         
                         <div id="chips">
@@ -64,11 +164,11 @@
                 </span>
                 <span id="results">
                 <!-- <h4 id="numResults">100 Results</h4> -->
-                <a href="https://myupmc.upmc.com/anywhere-care/" target="_blank">
+                <!-- <a href="https://myupmc.upmc.com/anywhere-care/" target="_blank">
                     <div class="ANC-Card">
                         <p>I'm looking for virtual care via <span>UPMC AnywhereCare</span>.</p>
                     </div>
-                </a>
+                </a> -->
                 <!-- <script>
                     for(i = 0; i < 20; i++){
                        document.getElementById("results").innerHTML += '<a href="#"><div class="provider"><div class="leftColumn"><h2 class="name">Lastname, Firstname MI, MD</h2><div class="spacer"><h3>Internal Medicine</h3><span class="np"></span></div></div><div class="rightColumn"><h4>Pine Richland Medical Associates</h4><div><address>9999 Poplar Street <br>Pittsburgh, PA 15222</address><phone>(412) 412-4124</phone></div><div class="milesDist"><span class="letter">B</span><span class="distance"> 0.75 miles away</span></div></div></div></a>'
@@ -111,7 +211,10 @@
         </div>
         
     </body>
+    <script type="text/javascript" language="javascript" src="languages.js"></script>
+    <script type="text/javascript" language="javascript" src="hospitals.js"></script>
     <script type="text/javascript" language="javascript" src="index.js"></script>
+ 
 </html>
 
 <script>

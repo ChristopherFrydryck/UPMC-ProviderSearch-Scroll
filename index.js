@@ -2,7 +2,7 @@
 var activeFilters = [];
 var limitedArray = [];
 var limitedFullArray = [];
-var filteredArray = []
+var filteredArray = [];
 var startResults = 0;
 var endResults = 20;
 
@@ -10,8 +10,11 @@ var endResults = 20;
 // shuffle(myJson);
 
 
+// Define the languages of search on render
+languageRender("English", "Hebrew", "Spanish")
+hospitalRender("UPMC St Margaret", "UPMC Mercy", "UPMC Presbyterian", "UPMC Magee Womens Hospital")
 
-
+console.log(hospitals)
 
 
 
@@ -44,6 +47,7 @@ function dataInitalize(start ,end, ANPfilt) {
 
 
     document.getElementById("results").innerHTML = '<h4 id="numResults">' + limitedFullArray.length + ' Results</h4>'
+    start == 0 ? document.getElementById("results").innerHTML += '<a href="https://myupmc.upmc.com/anywhere-care/" target="_blank"><div class="ANC-Card"><p>I\'m looking for virtual care via <span>UPMC AnywhereCare</span>.</p></div></a>' : null
     for(let i = 0; i < limitedArray.length; i++){
         document.getElementById("results").innerHTML += '<a href="#"><div class="provider"><div class="leftColumn"><h2 class="name">Lastname, Firstname MI, MD</h2><div class="spacer"><h3>Internal Medicine</h3><span class="np"></span></div></div><div class="rightColumn"><h4>Pine Richland Medical Associates</h4><div><address>9999 Poplar Street <br>Pittsburgh, PA 15222</address><phone>(412) 412-4124</phone></div><div class="milesDist"><span class="letter">B</span><span class="distance"> 0.75 miles away</span></div></div></div></a>'
     }
@@ -120,6 +124,8 @@ function reportWindowSize(){
         document.getElementById('leftColumn').removeAttribute('style');
         document.getElementById('map').removeAttribute('style');
         document.getElementById('row').removeAttribute('style');
+    }else{
+        
     }
 }
 
@@ -127,7 +133,7 @@ function reportWindowSize(){
 
 // Alert when clicking edit search
 document.getElementById('editSearch').addEventListener('click', () => alert("You successfully edited the search. You may continue with the test."));
-
+document.querySelectorAll('#searchHead a').forEach((x,i) => x.addEventListener('click', () => alert("You successfully edited the search. You may continue with the test.")))
 
 
 
@@ -158,7 +164,56 @@ function scrollFunction() {
             e.style.cssText = "font-size: 12px"
         })
     }
+
+
+   
 } window.onscroll = function() {scrollFunction()};
+
+
+function filterScroll(){
+    // let moreLeft = document.querySelector("#filter .option.More").getBoundingClientRect().left;
+    // let moreTop = document.querySelector("#filter .option.More").getBoundingClientRect().top;
+
+    // document.getElementById("moreMenu").style.cssText="top: " + moreTop +"; left:"+moreLeft+";"
+    const moreMenu = document.getElementById("moreMenu")
+    const filters = document.getElementById("filter")
+
+    moreMenu.style.cssText = "";
+
+    if((moreMenu.offsetLeft + moreMenu.offsetWidth - 10) >= filters.offsetWidth){
+        moreMenu.style.cssText="right: 0;";
+        // console.log("stick to right")
+    }
+    
+}
+document.getElementById('filter').onscroll = () => filterScroll()
+
+
+
+
+function clickMore(){
+    const moreMenu = document.getElementById("moreMenu")
+    const arrow = document.getElementsByClassName('arrow-up')[0];
+    const filters = document.getElementById("filter")
+
+
+
+
+        moreMenu.classList.toggle("hidden")
+        window.getComputedStyle(arrow).visibility == 'hidden' ? arrow.style.cssText="visibility: visible" : arrow.style.cssText="visibility: hidden"
+        
+ 
+   
+
+    moreMenu.style.cssText = "";
+
+    if((moreMenu.offsetLeft + moreMenu.offsetWidth - 10) >= filters.offsetWidth){
+        moreMenu.style.cssText="right: 0;";
+        // console.log("stick to right")
+    }
+    
+}document.querySelector("#filter .option.More").addEventListener("click", () => clickMore())
+
 
 
 // For Clear All filter chip
@@ -170,16 +225,175 @@ function clearAllFilters(){
         e.classList.remove("active")
     })
 
+    document.getElementById("moreMenu").classList.add("hidden");
+    document.getElementsByClassName('arrow-up')[0].style.cssText="visibility: hidden;";
+
+
     document.querySelectorAll('#filter .option .container').forEach((e) => {
         e.classList.remove("active")
     })
 
     document.getElementById("chips").innerHTML = ''
+    document.getElementById('map').style.cssText = 'top: 150px;  height: calc(100vh - 150px);'
 
     fakeLoading(800);
 
 
 }
+
+
+function languageRender(...langs){
+    let validList = document.getElementById("validLanguages");
+    let invalidList = document.getElementById("invalidLanguages");
+    let invalidListHidden = document.getElementById('invalidLanguagesHidden')
+
+    let langArr = languages
+
+    var index;
+        for (var i=0; i<langs.length; i++) {
+            index = langArr.indexOf(langs[i]);
+            if (index > -1) {
+                langArr.splice(index, 1);
+            }
+        }
+
+    validList.innerHTML = '';
+    invalidList.innerHTML = '';
+
+
+
+    for(let i = 0; i < langs.length; i++){
+        // if (i == 0){
+        // validList.innerHTML += `<label class="control control-radio">${langs[i]}<input type="radio" name="radio" checked="checked" name="group2" value="option2"/><div class="control_indicator"></div></label>`
+        // }else{
+        //   validList.innerHTML+= `<label class="control control-radio">${langs[i]}<input type="radio" name="radio" name="group2" value="option2"/><div class="control_indicator"></div></label>`
+        // }
+        validList.innerHTML+= `<label class="control control-radio">${langs[i]}<input type="radio" name="radio" name="group2" value="option2"/><div class="control_indicator"></div></label>`
+    }
+
+    for(let i = 0; i < langArr.length; i++){
+        if(i < 5){
+            invalidList.innerHTML += `<label class="control control-radio disabled">
+            ${langArr[i]}
+                    <input type="radio" name="radio" name="group2" value="option2" disabled/>
+                <div class="control_indicator"></div>
+            </label>`
+        }else{
+            invalidListHidden.innerHTML += `<label class="control control-radio disabled">
+            ${langArr[i]}
+                    <input type="radio" name="radio" name="group2" value="option2" disabled/>
+                <div class="control_indicator"></div>
+            </label>`
+        }
+    }
+
+    document.querySelector("#languageMore form").innerHTML+='<Button type="button" id="langButton" style="flex: 1; border: 2px solid #AF4591; border-radius: 4px; width: 100%; height: 40px; font-size: 14px; color: #AF4591; font-weight: 600; background-color: transparent; cursor: pointer;">View More Languages</Button>'
+
+  
+    
+}
+
+
+function showAllLanguages() {
+    let button = document.getElementById("langButton");
+    let hiddenList = document.getElementById('invalidLanguagesHidden');
+    hiddenList.classList.toggle("hidden");   
+    if(hiddenList.classList.contains("hidden")){
+        button.innerText = "View More Languages"
+    }else{
+        button.innerText = "View Less Languages"
+    } 
+}document.getElementById("langButton").addEventListener("click", () => showAllLanguages());
+
+
+
+
+function hospitalRender(...hosp){
+    let validList = document.getElementById("validHospitals");
+    let invalidList = document.getElementById("invalidHospitals");
+    let invalidListHidden = document.getElementById('invalidHospitalsHidden')
+
+    let hospArr = hospitals;
+
+    
+
+    var index;
+        for (var i=0; i<hosp.length; i++) {
+            index = hospArr.indexOf(hosp[i]);
+            if (index > -1) {
+                hospArr.splice(index, 1);
+            }
+        }
+       
+
+    validList.innerHTML = '';
+    invalidList.innerHTML = '';
+  
+
+    for(let i = 0; i < hosp.length; i++){
+        // if (i == 0){
+        // validList.innerHTML += `<label class="control control-radio">${hosp[i]}<input type="radio" name="radio" checked="checked" name="group2" value="option2"/><div class="control_indicator"></div></label>`
+        // }else{
+        //   validList.innerHTML+= `<label class="control control-radio">${hosp[i]}<input type="radio" name="radio" name="group2" value="option2"/><div class="control_indicator"></div></label>`
+        // }
+        validList.innerHTML+= `<label class="control control-radio">${hosp[i]}<input type="radio" name="radio" name="group2" value="option2"/><div class="control_indicator"></div></label>`
+    }
+
+    for(let i = 0; i < hospArr.length; i++){
+        if(i < 5){
+            invalidList.innerHTML += `<label class="control control-radio disabled">
+            ${hospArr[i]}
+                    <input type="radio" name="radio" name="group2" value="option2" disabled/>
+                <div class="control_indicator"></div>
+            </label>`
+        }else{
+            invalidListHidden.innerHTML += `<label class="control control-radio disabled">
+            ${hospArr[i]}
+                    <input type="radio" name="radio" name="group2" value="option2" disabled/>
+                <div class="control_indicator"></div>
+            </label>`
+        }
+    }
+
+    document.querySelector("#hospitalMore form").innerHTML+='<Button type="button" id="hospButton" style="flex: 1; border: 2px solid #AF4591; border-radius: 4px; width: 100%; height: 40px; font-size: 14px; color: #AF4591; font-weight: 600; background-color: transparent; cursor: pointer;">View More Hospitals</Button>'
+
+  
+    
+}
+
+function showAllHospitals() {
+    let button = document.getElementById("hospButton");
+    let hiddenList = document.getElementById('invalidHospitalsHidden');
+    hiddenList.classList.toggle("hidden");   
+    if(hiddenList.classList.contains("hidden")){
+        button.innerText = "View More Hospitals"
+    }else{
+        button.innerText = "View Less Hospitals"
+    } 
+}document.getElementById("hospButton").addEventListener("click", () => showAllHospitals());
+
+
+
+
+
+
+function windowResize(){
+    const moreMenu = document.getElementById("moreMenu")
+    const filters = document.getElementById("filter")
+
+ 
+   
+
+    moreMenu.style.cssText = "";
+
+    if((moreMenu.offsetLeft + moreMenu.offsetWidth - 10) >= filters.offsetWidth){
+        moreMenu.style.cssText="right: 0;";
+    }
+
+}window.addEventListener("resize", () => windowResize());
+
+
+
 
 
 // For clicking on  the 'X' of the chip. E is the "X" that is clicked
@@ -194,6 +408,11 @@ function closeChip(e){
     document.querySelector("#filter .option." + e.parentNode.innerText.split(" ")[0].toString() + " .container").classList.remove("active");
 
     fakeLoading(800);
+
+    if(e.parentNode.classList.contains("More")){
+        document.getElementById("moreMenu").classList.add("hidden");
+        document.getElementsByClassName('arrow-up')[0].style.cssText="visibility: hidden;";
+    }
 
     let splicePoint = activeFilters.findIndex((x) => x == e.parentNode.innerText);
     activeFilters.splice(splicePoint, 1);
@@ -225,13 +444,19 @@ function clickFilter(e){
     // console.log(e.classList.contains('active'))
     e.querySelector('.container').classList.toggle('active')
     e.classList.toggle('active');
-    fakeLoading(800);
     
-    if(!activeFilters.includes(e.querySelector('.container p').innerText)){
+
+    // console.log(e.classList.contains('More'))
+    
+    if(!activeFilters.includes(e.querySelector('.container p').innerText) && !e.classList.contains('More')){
         activeFilters.push(e.querySelector('.container p').innerText);
+        fakeLoading(800);
     }else{
-        let splicePoint = activeFilters.findIndex((x) => x == e.querySelector('.container p').innerText)
-        activeFilters.splice(splicePoint, 1);
+        if(!e.classList.contains('More')){
+            let splicePoint = activeFilters.findIndex((x) => x == e.querySelector('.container p').innerText)
+            activeFilters.splice(splicePoint, 1);
+            fakeLoading(800);
+        }
     }
 
     if(activeFilters.length == 0){

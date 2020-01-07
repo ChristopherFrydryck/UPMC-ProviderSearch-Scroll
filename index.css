@@ -1,4 +1,4 @@
-html{
+html, body{
     scroll-behavior: smooth;
 }
 
@@ -6,6 +6,7 @@ a{
     text-decoration: none;
     color: #af4591;
     display: inline;
+    cursor: pointer;
 }
 
 .hidden{
@@ -113,7 +114,7 @@ body{
     /* background-color: green; */
     display: flex; 
     align-items: flex-start;
-    overflow-x: scroll;
+    overflow-x: auto;
     width: 100%;
     white-space: nowrap;
     flex-direction: row;
@@ -145,7 +146,7 @@ body{
     background-color: #27C4A5;
     color: white;
     border: 2px solid #27C4A5;
-    padding: 12px 30px;
+    padding: 12px 30px 26px;
     margin-right: 10px;
 }
 
@@ -174,6 +175,254 @@ body{
 #filter .option:hover{
     border: 2px solid rgb(36, 97, 85);
 }
+
+#moreMenu{
+    color: black;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0px 5px 5px;
+    border-radius: 6px;
+    overflow-y: scroll;
+    position: absolute;
+    width: 270px; 
+    height: 355px; 
+    /* margin-top: 210px; */
+    margin-left: -100px;
+    /* right: 0; */
+    z-index: 100;
+    box-shadow: #0000002e 4px 1px 9px 0px;
+    
+}
+
+#moreMenu .moreMenuBG{
+    background-color: rgba(255, 255, 255, 0.568) !important;
+    -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(3px);
+  width: 270px;
+  height: 355px;
+  position: absolute;
+  border-radius: 10px;
+  
+}
+
+.mobileMore{
+    display: none;
+}
+
+
+
+.arrow-up {
+    /* align-self: center; */
+    position: relative;
+    margin-bottom: -66px;
+    z-index: 5;
+    margin-top: 5px;
+    /* bottom: 60; */
+    /* width: 0; 
+    height: 0;  */
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid rgb(243, 243, 243);
+  }
+
+.scrollContainer{
+    overflow-y: scroll;
+    z-index: 6;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 12px;
+}
+
+.scrollContainer .clear{
+    color: #AF4591;
+    cursor: pointer;
+    float: right;
+    font-size: 14px;
+    align-self: flex-end;
+    margin-bottom: -22px
+}
+
+
+.scrollContainer .checkboxTitle{
+    font-family: 'Gotham', sans-serif;
+    color: #4F1140;
+    margin: 4px 0 8px 0;
+
+}
+
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 96%;               
+    background-color:#666D70;
+    height: 1px;
+  }
+
+
+
+/* Checkboxes */
+
+.control {
+    font-family: 'Gotham', sans-serif;
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    padding-top: 3px;
+    cursor: pointer;
+    font-size: 14px;
+}
+    .control input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+.control_indicator {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: #e6e6e6;
+    border: 0px solid #000000;
+    border-radius: 0px;
+}
+.control:hover input ~ .control_indicator,
+.control input:focus ~ .control_indicator {
+    background: #cccccc;
+}
+
+.control input:checked ~ .control_indicator {
+    background: #af4591;
+}
+.control:hover input:not([disabled]):checked ~ .control_indicator,
+.control input:checked:focus ~ .control_indicator {
+    background: #0e6647d;
+}
+.control input:disabled ~ .control_indicator {
+    background: #e6e6e6;
+    opacity: 0.6;
+    pointer-events: none;
+}
+.control_indicator:after {
+    box-sizing: unset;
+    content: '';
+    position: absolute;
+    display: none;
+}
+.control input:checked ~ .control_indicator:after {
+    display: block;
+}
+.control-checkbox .control_indicator:after {
+    left: 8px;
+    top: 4px;
+    width: 3px;
+    height: 8px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.control-checkbox input:disabled ~ .control_indicator:after {
+    border-color: #7b7b7b;
+}
+.control-checkbox .control_indicator::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-left: -1.3rem;
+    margin-top: -1.3rem;
+    background: #af4591;
+    border-radius: 3rem;
+    opacity: 0.3;
+    z-index: 99999;
+    transform: scale(0);
+}
+
+
+.control-radio .control_indicator {
+    border-radius: 50%;
+}
+
+.control-radio .control_indicator:after {
+    left: 7px;
+    top: 7px;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background: #ffffff;
+    transition: background 250ms;
+}
+.control-radio input:disabled ~ .control_indicator:after {
+    background: #7b7b7b;
+}.control-radio .control_indicator::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-left: -1.3rem;
+    margin-top: -1.3rem;
+    background: #af4591;
+    border-radius: 3rem;
+    opacity: 0.6;
+    z-index: 99999;
+    transform: scale(0);
+}
+
+
+
+@keyframes s-ripple {
+    0% {
+        transform: scale(0);
+    }
+    20% {
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+@keyframes s-ripple-dup {
+0% {
+    transform: scale(0);
+    }
+30% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+.control-checkbox input + .control_indicator::before {
+    animation: s-ripple 250ms ease-out;
+}
+.control-checkbox input:checked + .control_indicator::before {
+    animation-name: s-ripple-dup;
+}
+.control-radio input + .control_indicator::before {
+    animation: s-ripple 250ms ease-out;
+}
+.control-radio input:checked + .control_indicator::before {
+    animation-name: s-ripple-dup;
+}
+
+
+
+
+
 
 
 #chips{
@@ -551,7 +800,25 @@ body{
 }
 
 @media only screen and (max-width: 769px) and (min-width: 481px) {
+    #filter .more:hover{
+        color: white;
+        border: 2px solid #27C4A5;
+    }
+    #filter .option:hover{
+        border: 2px solid lightgray;
+    }
 
+    #filter .option.more:hover{
+        border: 2px solid #27C4A5;
+    }
+
+    #filter .option.active:hover{
+        border: 2px solid #27C4A5;
+    }
+
+    .mobileMore{
+        display: block;
+    }
 
     #map{
         display: none;
@@ -626,6 +893,26 @@ body{
   @media only screen and (max-width: 480px) {
     html{
         width: 100vw;
+    }
+
+    #filter .more:hover{
+        color: white;
+        border: 2px solid #27C4A5;
+    }
+    #filter .option:hover{
+        border: 2px solid lightgray;
+    }
+
+    #filter .option.more:hover{
+        border: 2px solid #27C4A5;
+    }
+
+    #filter .option.active:hover{
+        border: 2px solid #27C4A5;
+    }
+
+    .mobileMore{
+        display: block;
     }
 
 
