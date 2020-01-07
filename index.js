@@ -14,8 +14,6 @@ var endResults = 20;
 languageRender("English", "Hebrew", "Spanish")
 hospitalRender("UPMC St Margaret", "UPMC Mercy", "UPMC Presbyterian", "UPMC Magee Womens Hospital")
 
-console.log(hospitals)
-
 
 
 // Fake loading function. T is the time in milliseconds
@@ -133,7 +131,6 @@ function reportWindowSize(){
 
 // Alert when clicking edit search
 function clickEdit(){
-    let editButton = document.getElementById('editSearch');
     let radius = document.getElementById('radius')
 
     alert("You successfully edited the search. You may continue with the test.");
@@ -143,8 +140,9 @@ function clickEdit(){
 
 }
 document.getElementById('editSearch').addEventListener('click', () => clickEdit());
-document.querySelectorAll('#searchHead a').forEach((x,i) => x.addEventListener('click', () => alert("You successfully edited the search. You may continue with the test.")))
-
+document.getElementById('radius').addEventListener('click', () => clickEdit());
+document.getElementById("drType").addEventListener("click", () => alert("You successfully edited the search. You may continue with the test."))
+document.getElementById("location").addEventListener("click", () => alert("You successfully edited the search. You may continue with the test."))
 
 
 
