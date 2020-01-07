@@ -132,7 +132,17 @@ function reportWindowSize(){
 
 
 // Alert when clicking edit search
-document.getElementById('editSearch').addEventListener('click', () => alert("You successfully edited the search. You may continue with the test."));
+function clickEdit(){
+    let editButton = document.getElementById('editSearch');
+    let radius = document.getElementById('radius')
+
+    alert("You successfully edited the search. You may continue with the test.");
+    radius.innerText = "10 miles";
+    fakeLoading(2000);
+    
+
+}
+document.getElementById('editSearch').addEventListener('click', () => clickEdit());
 document.querySelectorAll('#searchHead a').forEach((x,i) => x.addEventListener('click', () => alert("You successfully edited the search. You may continue with the test.")))
 
 
