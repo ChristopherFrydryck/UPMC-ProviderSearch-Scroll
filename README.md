@@ -5,6 +5,14 @@ To view a live demo of this code, please visit: https://www.christopherfrydryck.
 
 ![Provider Search UI Redesign](https://www.christopherfrydryck.cf/img/ProviderSearchRedesign.png)
 
+## Requirement Specs for IT:
+### Filter/Scroll UI
+#### Desktop Filters
+* Boolean Filter (True/False)(includes Accepting New Patients and Handicap Accessible)
+* Dropdown Filters (includes Affiliated Hospital, Open Time, Network Accepted and More)
+
+> "Filters will be in conjunction with results: Ex) IF there are only English & Spanish speaking providers found back in results, ONLY those filters will show"
+
 ## Cloning and Manipulating Data 
 In order to deviate from the demo link above, please feel free to download/clone this repo.  You can find the data shown in JSON format under `ProviderData.json`.  Here the structure looks like:
 
