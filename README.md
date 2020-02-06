@@ -10,6 +10,8 @@ To view a live demo of this code, please visit: https://www.christopherfrydryck.
 ##### Types of Filters
 * Boolean Filter (True/False)(includes Accepting New Patients and Handicap Accessible)
 * Dropdown Filters (includes Affiliated Hospital, Open Time, Network Accepted and More)
+  * For dropdowns, use the same style for all dropdown filters as the more filter.
+  * When the dropdown is open, if the user clicks outside of the containing box, it will close the dropdown filter . This action does not automatically apply the filters.  Dropdown filters will feature a Apply button at the bottom that will add the pill to the filters.
 > NOTE: When a user clicks on a filter, show two new changes. First, a new active state for the filter and also a pill below showcasing the filter is active and can be removed. Use the filter value in the pill (IE: someone chooses a language filter of "Arabic" so the pill with read "Arabic" not "Language"
 
 ##### Conditional Filter Notes
