@@ -8,10 +8,28 @@ To view a live demo of this code, please visit: https://www.christopherfrydryck.
 ## Requirement Specs for IT:
 ### Filter/Scroll UI
 #### Desktop Filters
+##### Types of Filters
 * Boolean Filter (True/False)(includes Accepting New Patients and Handicap Accessible)
 * Dropdown Filters (includes Affiliated Hospital, Open Time, Network Accepted and More)
 
+##### Conditional Filter Notes
 > "Filters will be in conjunction with results: Ex) IF there are only English & Spanish speaking providers found back in results, ONLY those filters will show"
+* If language is not available in the result list (aka does not apply), THEN it will appear grayed out but still visible
+  * Service calls pending. This may be a future enhancement because we would need to requery all results, not just the max 100 results that display in the UI.
+* If the filter does not apply to what is being searched for (location vs. provider filters) THEN do not show filter: Ex) gender does not apply to location filters, so do not show it (same as what we are currently doing)
+* If a user updates their search options, THEN filters should update: Ex) current list does not show French speaking language, but after updated it will appear as not grayed out but available to be refined by
+
+##### Gender Filter Specifics
+* Both, Male or Female display
+* Should be radio buttons and the default value is both.  This way we are not limiting results by default and require that one must be selected
+
+##### Ways to Undo/Cancel a Filter
+* Click on the filter again
+* Click the "X" in the pill that is affiliated with the filter
+* Click "Clear All" pill (will clear all filters instead of specific filter)
+
+
+# Code Notes for Dev
 
 ## Cloning and Manipulating Data 
 In order to deviate from the demo link above, please feel free to download/clone this repo.  You can find the data shown in JSON format under `ProviderData.json`.  Here the structure looks like:
