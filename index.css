@@ -1,5 +1,7 @@
 html, body{
     scroll-behavior: smooth;
+    scroll-snap-points-y: repeat(200px);
+  scroll-snap-type: mandatory;
 }
 
 a{
@@ -195,9 +197,10 @@ body{
 }
 
 #moreMenu .moreMenuBG{
-    background-color: rgba(255, 255, 255, 0.568) !important;
+    /* background-color: rgba(255, 255, 255, 0.568) !important;
     -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px); */
+  background-color: white;
   width: 270px;
   height: 355px;
   position: absolute;
